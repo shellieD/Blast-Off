@@ -8,13 +8,51 @@
     color: white;
     font-family: 'Space Mono', sans-serif;
 }
+html {
+    height: 100%;
+}
 
 body {
+    height: 100%;
     background: blue url('../images/space-background.jpg') no-repeat center center/cover;
 }
 
-logo {
-    font-size: 6rem;
+.logo {
+    font-size: 2rem;
     margin: auto;
+    text-align: center;
+}
+
+#game-level-area {
+    font-size: 1.1rem;
+    margin: 50px 200px;
+    padding: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgba(8, 17, 75, 0.7);
+    border-radius: 30px;
+    box-shadow: 15px 20px 20px 1px #08114B;
+}
+
+#game-level-area p {
+    margin: 30px 100px;
+}
+
+#difficulty-buttons {
+    padding: 50px;
+    font-size: 1.2rem;
+}
+
+.button-level {
+    background-color: #341074;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    box-shadow: 15px 20px 20px 1px #08114B;
+    margin: 20px;
+}
+
+.button-level:hover {
+    background-color: #863C6F;
 }
 
