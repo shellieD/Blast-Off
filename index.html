@@ -4,27 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blast-Off.  An modern alternative to Hangman.  An interactive front-end website designed to test your knowlegde on all things space-related.  Can you guess the word before your lives are up and the mission is aborted??">
+    <meta name="keywords" content="Space game, hangman, interactive game, word game, test your space volcabulary">
+    <meta name="author" content="Shellie Downie">
+    <!--FAVICON-->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest" crossorigin="use-credentials">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Blast-Off! A modern alternative to Hangman!</title>
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1>Blast-Off!!!</h1>
+            <h1>Blast-Off</h1>
             <p> A modern alternative to Hangman</p>
         </div>
     </header>
     <section>
         <div id="game-level-area">
             <h2>Welcome Astronauts!</h2>
-            <p>The aim of the game is to guess the space-related word, letter-by-letter, before your lives are up to blast-off to space.  Use too many of your lives and you will remain grounded *sad-face*</p>
-            <div id = "difficulty-buttons">
+            <p>The aim of the game is to guess the space-related word, letter-by-letter, before your lives are up to blast-off to space.  Use too many of your lives and you will remain grounded *sad-astronaut-face*</p>
+            <div class="difficulty-buttons">
                 <h3>Choose difficulty</h3>
                 <button class="button-level" id="level1">Level 1</button>
                 <button class="button-level" id="level2">Level 2</button>
                 <button class="button-level" id="level3">Level 3</button>
             </div>
-
+        </div>
+        <div id="game-area">
+            <h3>Blast off to space by guessing the word correctly! Good luck with your mission spacewalker.</h3>
+            <div id="guessing-area">
+                <div id="random-word">
+                   <p> __  __  __  __  __  __  __</p>
+                </div>
+                <div id="alphabet">
+                    <p> A B C D E F G H I J K L M N O P Q R S T U V Q W X Y Z</p>
+                </div>
+                <div class="scores-area">
+                    <p class="blast-offs">No of Blast-offs: 0</p>
+                    <p class="grounded"> No of groundings: 0</p>
+                </div>
+                <div id="rocket">
+                    <img src="assets/images/rocket.png" alt="Red rocket">
+                </div>
+            </div>
+        </div>
+        <div id="mission-accomplished">
+            <h2>MISSION ACCOMPLISHED </h2>
+            <p>WELL DONE SPACE CADET</p>
+            <div class="difficulty-buttons">
+                <h3>To play again</h3>
+                <h3>choose difficulty</h3>
+                <button class="button-level" id="level1">Level 1</button>
+                <button class="button-level" id="level2">Level 2</button>
+                <button class="button-level" id="level3">Level 3</button>
+            </div>
+            <div class="scores-area">
+                <p id="blast-offs">No of Blast-offs: 0</p>
+                <p id="grounded"> No of groundings: 0</p>
+            </div>
+        </div>
+        <div id="mission-aborted">
+            <h2>MISSION ABORTED</h2>
+            <p>RETURN TO SPACE SCHOOL</p>
+            <div class="difficulty-buttons">
+                <h3>To play again</h3>
+                <h3>choose difficulty</h3>
+                <button class="button-level" id="level1">Level 1</button>
+                <button class="button-level" id="level2">Level 2</button>
+                <button class="button-level" id="level3">Level 3</button>
+            </div>
+            <div class="scores-area">
+                <p class="blast-offs">No of Blast-offs: 0</p>
+                <p class="grounded"> No of groundings: 0</p>
+            </div>
         </div>
     </section>
     <script src="assets/js/script.js"></script>
