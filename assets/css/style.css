@@ -49,7 +49,7 @@ body {
     font-size: 1.2rem;
 }
 
-.button-level {
+.button-level, button #reset {
     background-color: #341074;
     padding: 15px;
     font-size: 1.2rem;
@@ -58,7 +58,7 @@ body {
     margin: 20px;
 }
 
-.button-level:hover {
+.button-level:hover, #reset:hover {
     background-color: #863C6F;
 }
 
@@ -88,5 +88,5 @@ body {
 
 @keyframes fly { 
     from{ bottom: -50px;}
-    to{ bottom: 1000px;}
+    to{ bottom: 1500px;}
 }
