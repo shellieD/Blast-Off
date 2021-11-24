@@ -2,6 +2,7 @@
 //Get the button elements and add event listeners to them.
 
 document.addEventListener("DOMContentLoaded", function() {
+    openGameLevelArea();
     let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
         button.addEventListener("click", function(){
@@ -23,6 +24,21 @@ document.addEventListener("DOMContentLoaded", function() {
 /**
  * changes inner HTML to display game screen when called.
  */
+
+function openGameLevelArea() {
+    document.getElementById('container').innerHTML = `
+    <div id="game-level-area">
+            <h2>Welcome Astronauts!</h2>
+            <p>The aim of the game is to guess the space-related word, letter-by-letter, before your lives are up to blast-off to space.  Use too many of your lives and you will remain grounded *sad-astronaut-face*</p>
+            <div class="difficulty-buttons">
+                <h3>Choose Level</h3>
+                <button class="button-level" class="level1" data-type="levelOne">Level 1</button>
+                <button class="button-level" class="level2" data-type="levelTwo">Level 2</button>
+                <button class="button-level" class="level3" data-type="levelThree">Level 3</button>
+            </div>
+        </div>`
+}
+
 function openGameScreen() {
     document.getElementById('container').innerHTML =`
     <div id="game-area">
@@ -77,7 +93,7 @@ function openGameScreen() {
  */
 function runLevelOne() {
 
-    let levelOneWords = ['alien', 'asteroid', 'astronaut', 'big bang', 'black hole', 'comet', 'cosmic', 'crater', 'crew', 'danger', 'descent', 'disaster', 'Distant', 'Dwarf Planet', 'Earth', 'Full Moon', 'Galaxy', 'Gravity', 'Horizon', 'Hubble', 'Impact', 'Jupiter', 'Kilometers', 'Launch', 'Launch Pad', 'Light Years', 'Lunar', 'Magnetic', 'Mars', 'Mercury', 'Meteor', 'Meteorite', 'Milky Way', 'Moon', 'NASA', 'Nebula', 'Newton', 'North Star', 'Nova', 'Neptune', 'Orbit', 'Outer-Space', 'Ozone', 'Particles', 'Planet', 'Probe', 'Proton', 'Quest', 'Rocket', 'Rotation', 'Science', 'Scientist', 'Shooting Star', 'Shuttle', 'Solar', 'Solar System', 'Space', 'Space Craft', 'Space Station', 'Star Dust', 'Stars', 'Stellar', 'Storms', 'Saturn', 'Twinkle', 'Universe', 'Uranus', 'Venus', 'Voyage'];
+    //let levelOneWords = ['alien', 'asteroid', 'astronaut', 'big bang', 'black hole', 'comet', 'cosmic', 'crater', 'crew', 'danger', 'descent', 'disaster', 'Distant', 'Dwarf Planet', 'Earth', 'Full Moon', 'Galaxy', 'Gravity', 'Horizon', 'Hubble', 'Impact', 'Jupiter', 'Kilometers', 'Launch', 'Launch Pad', 'Light Years', 'Lunar', 'Magnetic', 'Mars', 'Mercury', 'Meteor', 'Meteorite', 'Milky Way', 'Moon', 'NASA', 'Nebula', 'Newton', 'North Star', 'Nova', 'Neptune', 'Orbit', 'Outer-Space', 'Ozone', 'Particles', 'Planet', 'Probe', 'Proton', 'Quest', 'Rocket', 'Rotation', 'Science', 'Scientist', 'Shooting Star', 'Shuttle', 'Solar', 'Solar System', 'Space', 'Space Craft', 'Space Station', 'Star Dust', 'Stars', 'Stellar', 'Storms', 'Saturn', 'Twinkle', 'Universe', 'Uranus', 'Venus', 'Voyage'];
     let levelOneRandomWord = levelOneWords[Math.floor(Math.random()*levelOneWords.length)]
     openGameScreen();
     console.log(levelOneRandomWord);
