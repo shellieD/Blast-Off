@@ -147,7 +147,7 @@ function missionAccomplished() {
         </div>`
 }
 
-function missionAborted {
+function missionAborted() {
     document.getElementById('mission-aborted').innerHTML =`
     <div id="mission-aborted">
             <h2>MISSION ABORTED</h2>
