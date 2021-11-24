@@ -52,6 +52,12 @@ function runLevelTwo() {
     console.log(levelTwoRandomWord);
 }
 
+function runLevelThree {
+    let levelThreeWords = 
+    let levelThreeRandomWord = levelThreeWords[Math.floor(Math.random()*levelThreeWords.length)]
+    console.log(levelThreeRandomWord);
+}
+
 function checkAnswer() {
 
 }
