@@ -149,7 +149,20 @@ function missionAccomplished() {
 
 function missionAborted {
     document.getElementById('mission-aborted').innerHTML =`
-    
+    <div id="mission-aborted">
+            <h2>MISSION ABORTED</h2>
+            <p>RETURN TO SPACE SCHOOL</p>
+            <div class="difficulty-buttons">
+                <h3>To play again</h3>
+                <h3>choose level</h3>
+                <button class="button-level" class="level1" data-type="levelOne">Level 1</button>
+                <button class="button-level" class="level2" data-type="levelTwo">Level 2</button>
+                <button class="button-level" class="level3" data-type="levelThree">Level 3</button>
+            </div>
+            <div class="scores-area">
+                <p class="blast-offs">No of Blast-offs: 0</p>
+                <p class="grounded"> No of groundings: 0</p>
+            </div>
+        </div>
     `
-
 }
