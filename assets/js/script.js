@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 })
 
+/**
+ * changes inner HTML to display game screen when called.
+ */
 function openGameScreen() {
     document.getElementById('container').innerHTML =`
     <div id="game-area">
@@ -125,10 +128,28 @@ function displayLevelThree() {
 
 }
 
-function missionAccomplished {
-
+function missionAccomplished() {
+    document.getElementById('mission-accomplished').innerHTML =`
+    <div id="mission-accomplished">
+            <h2>MISSION ACCOMPLISHED </h2>
+            <p>WELL DONE SPACE CADET</p>
+            <div class="difficulty-buttons">
+                <h3>To play again</h3>
+                <h3>choose level</h3>
+                <button class="button-level" class="level1" data-type="levelOne">Level 1</button>
+                <button class="button-level" class="level2" data-type="levelTwo">Level 2</button>
+                <button class="button-level" class="level3" data-type="levelThree">Level 3</button>
+            </div>
+            <div class="scores-area">
+                <p id="blast-offs">No of Blast-offs: 0</p>
+                <p id="grounded"> No of groundings: 0</p>
+            </div>
+        </div>`
 }
 
 function missionAborted {
+    document.getElementById('mission-aborted').innerHTML =`
     
+    `
+
 }
