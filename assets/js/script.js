@@ -33,7 +33,9 @@ document.addEventListener("DOMContentLoaded", function() {
     //console.log(chosenWord);
 //}
 
-
+/** 
+ * Selects random word from levelOneWords array
+ */
 function runLevelOne() {
     let alphabet = ["a', 'b", 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',  'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     let levelOneWords = ['Alien', 'Asteroid', 'Astronaut', 'Big Bang', 'Black Hole', 'Comet', 'Cosmic', 'Crater', 'Crew', 'Danger', 'Descent', 'Disaster', 'Distant', 'Dwarf Planet', 'Earth', 'Full Moon', 'Galaxy', 'Gravity', 'Horizon', 'Hubble', 'Impact', 'Jupiter', 'Kilometers', 'Launch', 'Launch Pad', 'Light Years', 'Lunar', 'Magnetic', 'Mars', 'Mercury', 'Meteor', 'Meteorite', 'Milky Way', 'Moon', 'NASA', 'Nebula', 'Newton', 'North Star', 'Nova', 'Neptune', 'Orbit', 'Outer-Space', 'Ozone', 'Particles', 'Planet', 'Probe', 'Proton', 'Quest', 'Rocket', 'Rotation', 'Science', 'Scientist', 'Shooting Star', 'Shuttle', 'Solar', 'Solar System', 'Space', 'Space Craft', 'Space Station', 'Star Dust', 'Stars', 'Stellar', 'Storms', 'Saturn', 'Twinkle', 'Universe', 'Uranus', 'Venus', 'Voyage'];
@@ -41,6 +43,9 @@ function runLevelOne() {
     console.log(levelOneRandomWord);
 }
 
+/**
+ * Selects random word from leveTwoWords array
+ */
 function runLevelTwo() {
     let levelTwoWords = ['Absolute', 'aerogel', 'aerospace', 'agency', 'air force', 'altitude', 'ambient', 'ammonia', 'analysis', 'anomaly', 'astronomer', 'astronomy', 'atmosphere', 'aurora borealis', 'byproduct', 'carbon dioxide', 'celestial', 'challenger', 'collision', 'colossal', 'commander', 'communication', 'constellation', 'corona', 'cosmology', 'cosmonaut', 'density', 'deploy', 'descendant', 'descent', 'discovery', 'double star', 'eclipse', 'ecliptic', 'Einstein', 'electron', 'ellipse', 'emission', 'engineer', 'equator', 'equinox', 'evolution', 'expedition', 'experiment', 'exploration', 'explosion', 'exposure', 'extraterrestrial', 'fireball', 'force field', 'formation', 'fossil fuel',  'fragment', 'galactic', 'galileo', 'gamma rays', 'gaseous', 'gravitation', 'Halley', 'hemisphere', 'hydraulic', 'ignition', 'impact', 'intergalactic', 'interplanetary', 'interstellar', 'magnitude', 'molecules', 'navigation', 'northern lights', 'observable', 'pioneer', 'planetarium', 'planetary', 'polestar', 'quasar', 'super nova', 'telescope', 'vaporise', 'velocity', 'wavelength'];
     let levelTwoRandomWord = levelTwoWords[Math.floor(Math.random()*levelTwoWords.length)]
