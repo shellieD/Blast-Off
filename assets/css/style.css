@@ -53,12 +53,13 @@ body {
     background-color: #341074;
     padding: 15px;
     font-size: 1.2rem;
+    cursor: pointer;
     border-radius: 30px;
     box-shadow: 15px 20px 20px 1px #08114B;
     margin: 20px;
 }
 
-.button-level:hover, .reset:hover {
+.button-level:hover, .reset:hover, .letter:hover {
     background-color: #863C6F;
 }
 
@@ -68,6 +69,19 @@ body {
 
 #alphabet {
     margin: 50px;
+}
+
+.letter {
+    background-color: #341074;
+    padding: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 15px 20px 20px 1px #08114B;
+    margin: 3px;
+}
+.letter:hover {
+    background-color: #863C6F;
 }
 
 .scores-area p {
