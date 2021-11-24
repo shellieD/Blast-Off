@@ -1,19 +1,19 @@
-//Wait for the DOM to finish loading before running the gaem
+//Wait for the DOM to finish loading before running the game
 //Get the button elements and add event listeners to them.
 
 document.addEventListener("DOMContentLoaded", function() {
     openGameLevelArea();
     let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
-        button.addEventListener("click", function(){
+        button.addEventListener("click", function(event){
             if (this.getAttribute("data-type") === "levelOne") {
-            runLevelOne();
+            runLevel(leveOneWords);
             } else {
                 if (this.getAttribute("data-type") === "levelTwo") {
-                runLevelTwo();
+                runLevel(levelTwoWords);
                 } else {
                     if (this.getAttribute("data-type") === "levelThree") {
-                    runLevelThree();
+                    runLevel(levelThreeWords);
                     }   
                 }
             }
@@ -91,29 +91,10 @@ function openGameScreen() {
 /** 
  * Selects random word from levelOneWords array
  */
-function runLevelOne() {
-
-    //let levelOneWords = ['alien', 'asteroid', 'astronaut', 'big bang', 'black hole', 'comet', 'cosmic', 'crater', 'crew', 'danger', 'descent', 'disaster', 'Distant', 'Dwarf Planet', 'Earth', 'Full Moon', 'Galaxy', 'Gravity', 'Horizon', 'Hubble', 'Impact', 'Jupiter', 'Kilometers', 'Launch', 'Launch Pad', 'Light Years', 'Lunar', 'Magnetic', 'Mars', 'Mercury', 'Meteor', 'Meteorite', 'Milky Way', 'Moon', 'NASA', 'Nebula', 'Newton', 'North Star', 'Nova', 'Neptune', 'Orbit', 'Outer-Space', 'Ozone', 'Particles', 'Planet', 'Probe', 'Proton', 'Quest', 'Rocket', 'Rotation', 'Science', 'Scientist', 'Shooting Star', 'Shuttle', 'Solar', 'Solar System', 'Space', 'Space Craft', 'Space Station', 'Star Dust', 'Stars', 'Stellar', 'Storms', 'Saturn', 'Twinkle', 'Universe', 'Uranus', 'Venus', 'Voyage'];
-    let levelOneRandomWord = levelOneWords[Math.floor(Math.random()*levelOneWords.length)]
+function runLevel(words) {
+    let randomWord = words[Math.floor(Math.random()*words.length)]
     openGameScreen();
-    console.log(levelOneRandomWord);
-}
-
-/**
- * Selects random word from leveTwoWords array
- */
-function runLevelTwo() {
-    let levelTwoWords = ['Absolute', 'aerogel', 'aerospace', 'agency', 'air force', 'altitude', 'ambient', 'ammonia', 'analysis', 'anomaly', 'astronomer', 'astronomy', 'atmosphere', 'aurora borealis', 'byproduct', 'carbon dioxide', 'celestial', 'challenger', 'collision', 'colossal', 'commander', 'communication', 'constellation', 'corona', 'cosmology', 'cosmonaut', 'density', 'deploy', 'descendant', 'descent', 'discovery', 'double star', 'eclipse', 'ecliptic', 'Einstein', 'electron', 'ellipse', 'emission', 'engineer', 'equator', 'equinox', 'evolution', 'expedition', 'experiment', 'exploration', 'explosion', 'exposure', 'extraterrestrial', 'fireball', 'force field', 'formation', 'fossil fuel',  'fragment', 'galactic', 'galileo', 'gamma rays', 'gaseous', 'gravitation', 'Halley', 'hemisphere', 'hydraulic', 'ignition', 'impact', 'intergalactic', 'interplanetary', 'interstellar', 'magnitude', 'molecules', 'navigation', 'northern lights', 'observable', 'pioneer', 'planetarium', 'planetary', 'polestar', 'quasar', 'super nova', 'telescope', 'vaporise', 'velocity', 'wavelength'];
-    let levelTwoRandomWord = levelTwoWords[Math.floor(Math.random()*levelTwoWords.length)]
-    openGameScreen();
-    console.log(levelTwoRandomWord);
-}
-
-function runLevelThree() {
-    let levelThreeWords = ['Aberration', 'Acceleration', 'Achievement', 'Adventure', 'Aerodynamics', 'aphelions', 'apogee', 'apotheosis', 'ascendant', 'azimuth', 'centrifugal force', 'combustion', 'composition', 'declination',  'disintegrate', 'domination', 'exobiology', 'expansion', 'fluorocarbon content', 'geocentric', 'geophysics', 'gyroscope', 'hypothesis', 'illumination', 'inosphere', 'jettison', 'Kuiper belt', 'luminosity', 'parallax', 'penumbra', 'propellant', 'propulsion', 'prototype', 'radiation', 'reflector', 'relativity', 'revolution', 'satellite', 'seismometer', 'stratosphere', 'subatomic', 'syzygy', 'trajectory', 'transmissions', 'turbulence', 'ultraviolet rays', 'weightlessness', 'zenith'];
-    let levelThreeRandomWord = levelThreeWords[Math.floor(Math.random()*levelThreeWords.length)]
-    openGameScreen();
-    console.log(levelThreeRandomWord);
+    console.log(randomWord);
 }
 
 function checkAnswer() {
