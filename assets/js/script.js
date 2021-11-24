@@ -52,8 +52,8 @@ function runLevelTwo() {
     console.log(levelTwoRandomWord);
 }
 
-function runLevelThree {
-    let levelThreeWords = 
+function runLevelThree() {
+    let levelThreeWords = ['Aberration', 'Acceleration', 'Achievement', 'Adventure', 'Aerodynamics', 'aphelions', 'apogee', 'apotheosis', 'ascendant', 'azimuth', 'centrifugal force', 'combustion', 'composition', 'declination',  'disintegrate', 'domination', 'exobiology', 'expansion', 'fluorocarbon content', 'geocentric', 'geophysics', 'gyroscope', 'hypothesis', 'illumination', 'inosphere', 'jettison', 'Kuiper belt', 'luminosity', 'parallax', 'penumbra', 'propellant', 'propulsion', 'prototype', 'radiation', 'reflector', 'relativity', 'revolution', 'satellite', 'seismometer', 'stratosphere', 'subatomic', 'syzygy', 'trajectory', 'transmissions', 'turbulence', 'ultraviolet rays', 'weightlessness', 'zenith'];
     let levelThreeRandomWord = levelThreeWords[Math.floor(Math.random()*levelThreeWords.length)]
     console.log(levelThreeRandomWord);
 }
