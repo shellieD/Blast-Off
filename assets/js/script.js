@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener("click", function(event){
             if (this.getAttribute("data-type") === "levelOne") {
-            runLevel(leveOneWords);
+            runLevel(levelOneWords);
             } else {
                 if (this.getAttribute("data-type") === "levelTwo") {
                 runLevel(levelTwoWords);
@@ -20,6 +20,24 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 })
+
+//const container = document.getElementById('container');
+//const gameLevelArea = document.getElementById('game-level-area'); // div containing text and difficulty-buttons div
+//const difficultyButtons = document.getElementsByClassName('difficulty-buttons'); //div containing level buttons
+//const buttonLevel = document.getElementsByClassName('button-level'); // all buttons for levels 
+//const level1 = docuement.getElementsByClassName('level1'); // button for level 1 game
+//const level2 = document.getElementsByClassName('level2'); // button for level 2 game
+//const level3 = document.getElementsByClassName('level3'); // button for level 3 game
+//const gameArea = document.getElementById('game-area'); // div containing all game features - rules, guessing-area div, reset button, scores and lives left
+//const guessingArea = document.getElementById('guessing-area'); // div containing current random word and alphabet buttons
+//const guessWord = document.getElementById('guess-word'); // <p> element containing current random word generated when level is chosen
+//const alphabetDiv = document.getElementById('alphabet'); // div containing alphabet buttons
+//const letterButton = document.getElementsByClassName('letter'); // letter buttons
+//const resetButtonDiv = document.getElementById('reset-button'); // reset button div
+//const reset = document.getElementsByClassName('reset'); //reset button
+
+
+
 
 /**
  * changes inner HTML to display game screen when called.
@@ -44,7 +62,7 @@ function openGameScreen() {
     <div id="game-area">
             <h3>Blast off to space by guessing the word correctly!<br>Good luck with your mission spacewalker.</h4>
             <div id="guessing-area">
-                <div id="random-word">
+                <div id="guess-word">
                    <p> __  __  __  __  __  __  __</p>
                 </div>
                 <div id="alphabet">
@@ -82,9 +100,7 @@ function openGameScreen() {
                     <p class="blast-offs">No of Blast-offs: 0</p>
                     <p class="grounded"> No of groundings: 0</p>
                 </div>
-                <div id="rocket">
-                    <img src="assets/images/rocket.png" alt="Red rocket">
-                </div>
+                <img src="assets/images/rocket.png" alt="Red rocket" id="rocket">
             </div>
         </div>`
 }
@@ -96,6 +112,7 @@ function runLevel(words) {
     openGameScreen();
     console.log(randomWord);
 }
+
 
 function checkAnswer() {
 

@@ -63,44 +63,44 @@ body {
     background-color: #863C6F;
 }
 
-#random-word {
+#game-area {
+    position: relative;
+}
+
+#guess-word {
     margin: 50px; 
 }
 
 #alphabet {
-    margin: 50px;
+    margin: 15px;
 }
 
 .letter {
     background-color: #341074;
-    padding: 15px;
-    font-size: 1.2rem;
+    padding: 10px;
+    font-size: 1rem;
     cursor: pointer;
     border-radius: 30px;
     box-shadow: 15px 20px 20px 1px #08114B;
-    margin: 3px;
+    margin: 1px;
 }
 .letter:hover {
     background-color: #863C6F;
 }
 
 .scores-area p {
-    display: inline-block;
-    margin: 50px;
+    margin: 15px;
 }
 
-#rocket img{
+#rocket {
     height: 200px;
-}
-
-#rocket img {
-    position: relative;
-    left: -419px;
-    bottom: -50px;
-    animation:  fly 3s .5s ease-in;
+    position: absolute;
+    left: 20%;
+    bottom: 0%;
+    animation: fly 3s .5s ease-in;
 }
 
 @keyframes fly { 
-    from{ bottom: -50px;}
-    to{ bottom: 1500px;}
+    from{ bottom: 0%;}
+    to{ bottom: 200%;}
 }
