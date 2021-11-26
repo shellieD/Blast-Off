@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
 //const letterButton = document.getElementsByClassName('letter'); // letter buttons
 //const resetButtonDiv = document.getElementById('reset-button'); // reset button div
 //const reset = document.getElementsByClassName('reset'); //reset button
-//const correctScore = document.getElementsByClassName('blast-offs'); // correct score div
-//const incorrectScore = document.getElementByClassName('grounded'); //incorrect score div
+//var correctScore = document.getElementsByClassName('blast-offs'); // correct score div
+//var incorrectScore = document.getElementByClassName('grounded'); //incorrect score div
 
 
 var wordArea = document.getElementById('word-area');
