@@ -67,8 +67,10 @@ body {
     position: relative;
 }
 
-#guess-word {
+#word-area {
     margin: 50px; 
+    font-size: 2rem;
+    letter-spacing: 10px;
 }
 
 #alphabet {
@@ -100,7 +102,7 @@ body {
     animation: fly 3s .5s ease-in;
 }
 
-@keyframes fly { 
+/*@keyframes fly { 
     from{ bottom: 0%;}
     to{ bottom: 200%;}
-}
+}*/

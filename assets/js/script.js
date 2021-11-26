@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //const level3 = document.getElementsByClassName('level3'); // button for level 3 game
 //const gameArea = document.getElementById('game-area'); // div containing all game features - rules, guessing-area div, reset button, scores and lives left
 //const guessingArea = document.getElementById('guessing-area'); // div containing current random word and alphabet buttons
-//const guessWord = document.getElementById('guess-word'); // <p> element containing current random word generated when level is chosen
+
 //const alphabetDiv = document.getElementById('alphabet'); // div containing alphabet buttons
 //const letterButton = document.getElementsByClassName('letter'); // letter buttons
 //const resetButtonDiv = document.getElementById('reset-button'); // reset button div
@@ -39,9 +39,14 @@ document.addEventListener("DOMContentLoaded", function() {
 //const incorrectScore = document.getElementByClassName('grounded'); //incorrect score div
 
 
+var wordArea = document.getElementById('word-area');
+
 /**
  * changes inner HTML to display game screen when called.
  */
+
+let lives = 10;
+let randomWord = '';
 
 function openGameLevelArea() {
     document.getElementById('container').innerHTML = `
@@ -62,8 +67,7 @@ function openGameScreen() {
     <div id="game-area">
             <h3>Blast off to space by guessing the word correctly!<br>Good luck with your mission spacewalker.</h4>
             <div id="guessing-area">
-                <div id="guess-word">
-                   <p> __  __  __  __  __  __  __</p>
+                <div id="word-area">
                 </div>
                 <div id="alphabet">
                     <button class="letter">A</button>
@@ -108,9 +112,18 @@ function openGameScreen() {
  * Selects random word from levelOneWords array
  */
 function runLevel(words) {
-    let randomWord = words[Math.floor(Math.random()*words.length)]
+    randomWord = words[Math.floor(Math.random()*words.length)]
     openGameScreen();
+    setRandomWord();
     console.log(randomWord);
+}
+
+function setRandomWord() {
+    currentWord = randomWord;
+    for (let i = 0; i < currentWord.length; i++) {
+        console.log(currentWord);
+    }
+    document.getElementById('word-area').innerHTML=`<p>${currentWord}</p>`;
 }
 
 
