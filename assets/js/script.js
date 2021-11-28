@@ -29,6 +29,7 @@ var wordArea = document.getElementById('word-area');
 
 let lives = 10;
 let randomWord = '';
+var currentWord;
 
 function openGameLevelArea() {
     document.getElementById('container').innerHTML = `
@@ -91,7 +92,7 @@ function openGameScreen() {
         </div>`
 }
 /** 
- * Selects random word from the word arrays depending on the level chosen
+ * generates random word from the word arrays depending on the level chosen
  */
 function runLevel(words) {
     randomWord = words[Math.floor(Math.random()*words.length)]
@@ -101,7 +102,7 @@ function runLevel(words) {
 }
 
 /**
- * 
+ * Splits letters of random word into array and sets the word for the new game 
  */
 function setRandomWord() {
     currentWord = randomWord;
@@ -112,10 +113,10 @@ function setRandomWord() {
     }
     let container = document.getElementById('word-area');
     container.innerHTML = html;
+    guessedLetter()
 }
 
-
-function checkAnswer() {
+function checkGuess() {
 
 }
 
