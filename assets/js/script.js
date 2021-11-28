@@ -21,24 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 })
 
-//const container = document.getElementById('container');
-//const gameLevelArea = document.getElementById('game-level-area'); // div containing text and difficulty-buttons div
-//const difficultyButtons = document.getElementsByClassName('difficulty-buttons'); //div containing level buttons
-//const buttonLevel = document.getElementsByClassName('button-level'); // all buttons for levels 
-//const level1 = docuement.getElementsByClassName('level1'); // button for level 1 game
-//const level2 = document.getElementsByClassName('level2'); // button for level 2 game
-//const level3 = document.getElementsByClassName('level3'); // button for level 3 game
-//const gameArea = document.getElementById('game-area'); // div containing all game features - rules, guessing-area div, reset button, scores and lives left
-//const guessingArea = document.getElementById('guessing-area'); // div containing current random word and alphabet buttons
-
-//const alphabetDiv = document.getElementById('alphabet'); // div containing alphabet buttons
-//const letterButton = document.getElementsByClassName('letter'); // letter buttons
-//const resetButtonDiv = document.getElementById('reset-button'); // reset button div
-//const reset = document.getElementsByClassName('reset'); //reset button
-//var correctScore = document.getElementsByClassName('blast-offs'); // correct score div
-//var incorrectScore = document.getElementByClassName('grounded'); //incorrect score div
-
-
 var wordArea = document.getElementById('word-area');
 
 /**
