@@ -52,32 +52,32 @@ function openGameScreen() {
                 <div id="word-area">
                 </div>
                 <div id="alphabet">
-                    <button class="letter">A</button>
-                    <button class="letter">B</button>
-                    <button class="letter">C</button>
-                    <button class="letter">D</button>
-                    <button class="letter">E</button>
-                    <button class="letter">F</button>
-                    <button class="letter">G</button>
-                    <button class="letter">H</button>
-                    <button class="letter">I</button>
-                    <button class="letter">J</button>
-                    <button class="letter">K</button>
-                    <button class="letter">L</button>
-                    <button class="letter">M</button>
-                    <button class="letter">N</button>
-                    <button class="letter">O</button>
-                    <button class="letter">P</button>
-                    <button class="letter">Q</button>
-                    <button class="letter">R</button>
-                    <button class="letter">S</button>
-                    <button class="letter">T</button>
-                    <button class="letter">U</button>
-                    <button class="letter">V</button>
-                    <button class="letter">W</button>
-                    <button class="letter">X</button>
-                    <button class="letter">Y</button>
-                    <button class="letter">Z</button>
+                    <button class="letter" data-key="a">A</button>
+                    <button class="letter" data-key="b">B</button>
+                    <button class="letter" data-key="c">C</button>
+                    <button class="letter" data-key="d">D</button>
+                    <button class="letter" data-key="e">E</button>
+                    <button class="letter" data-key="f">F</button>
+                    <button class="letter" data-key="g">G</button>
+                    <button class="letter" data-key="h">H</button>
+                    <button class="letter" data-key="i">I</button>
+                    <button class="letter" data-key="j">J</button>
+                    <button class="letter" data-key="k">K</button>
+                    <button class="letter" data-key="l">L</button>
+                    <button class="letter" data-key="m">M</button>
+                    <button class="letter" data-key="n">N</button>
+                    <button class="letter" data-key="o">O</button>
+                    <button class="letter" data-key="p">P</button>
+                    <button class="letter" data-key="q">Q</button>
+                    <button class="letter" data-key="r">R</button>
+                    <button class="letter" data-key="s">S</button>
+                    <button class="letter" data-key="t">T</button>
+                    <button class="letter" data-key="u">U</button>
+                    <button class="letter" data-key="v">V</button>
+                    <button class="letter" data-key="w">W</button>
+                    <button class="letter" data-key="x">X</button>
+                    <button class="letter" data-key="y">Y</button>
+                    <button class="letter" data-key="z">Z</button>
                 </div>
                 <div id="reset-button">
                     <button class="reset">Reset</button>
@@ -103,6 +103,7 @@ function runLevel(words) {
 function setRandomWord() {
     currentWord = randomWord;
     for (let i = 0; i < currentWord.length; i++) {
+        '_'.repeat(currentWord.length);
         console.log(currentWord);
     }
     document.getElementById('word-area').innerHTML=`<p>${currentWord}</p>`;
