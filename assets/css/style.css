@@ -68,9 +68,21 @@ body {
 }
 
 #word-area {
+    display: flex;
+    justify-content: center;
     margin: 50px; 
     font-size: 2rem;
     letter-spacing: 10px;
+}
+
+.hidden-letter {
+    color: transparent;
+}
+
+p>span {
+    border-bottom: 4px solid white;
+    margin: 0px 10px;
+    padding: 0px 10px;
 }
 
 #alphabet {
