@@ -35,7 +35,7 @@ function openGameLevelArea() {
     document.getElementById('container').innerHTML = `
     <div id="game-level-area">
             <h2>Welcome Astronauts!</h2>
-            <p>The aim of the game is to guess the space-related word, letter-by-letter, before your lives are up to blast-off to space.  Use too many of your lives and you will remain grounded *sad-astronaut-face*</p>
+            <p>The aim of the game is to guess the space-related word, letter-by-letter, before your lives are up to blast-off to space.  Use too many of your lives and your spaceship will remain grounded *sad-astronaut-face*</p>
             <div class="difficulty-buttons">
                 <h3>Choose Level</h3>
                 <button class="button-level" class="level1" data-type="levelOne">Level 1</button>
@@ -82,6 +82,9 @@ function openGameScreen() {
                 </div>
                 <div id="reset-button">
                     <button class="reset">Reset</button>
+                </div>
+                <div class="remaining-lives">
+                <p>Remaining Lives: 0</p>
                 </div>
                 <div class="scores-area">
                     <p class="blast-offs">No of Blast-offs: 0</p>
