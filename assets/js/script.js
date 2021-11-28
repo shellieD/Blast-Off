@@ -91,7 +91,7 @@ function openGameScreen() {
         </div>`
 }
 /** 
- * Selects random word from levelOneWords array
+ * Selects random word from the word arrays depending on the level chosen
  */
 function runLevel(words) {
     randomWord = words[Math.floor(Math.random()*words.length)]
@@ -100,13 +100,18 @@ function runLevel(words) {
     console.log(randomWord);
 }
 
+/**
+ * 
+ */
 function setRandomWord() {
     currentWord = randomWord;
-    for (let i = 0; i < currentWord.length; i++) {
-        '_'.repeat(currentWord.length);
-        console.log(currentWord);
+    let wordArray = currentWord.split("");
+    let html = "";
+    for (let i of wordArray) {
+      html = html + `<p data-letter="${i}"><span class="hidden-letter" data-letter="${i}">${i}</span></p>`;
     }
-    document.getElementById('word-area').innerHTML=`<p>${currentWord}</p>`;
+    let container = document.getElementById('word-area');
+    container.innerHTML = html;
 }
 
 
