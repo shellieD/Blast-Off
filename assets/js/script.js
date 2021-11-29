@@ -3,20 +3,16 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     openGameLevelArea();
-    let buttons = document.getElementsByTagName("button");
+    let buttons = document.getElementsByClassName("button-level");
     for (let button of buttons) {
         button.addEventListener("click", function(event){
             if (this.getAttribute("data-type") === "levelOne") {
-            runLevel(levelOneWords);
-            } else {
-                if (this.getAttribute("data-type") === "levelTwo") {
+                runLevel(levelOneWords);
+            } else if (this.getAttribute("data-type") === "levelTwo") {
                 runLevel(levelTwoWords);
-                } else {
-                    if (this.getAttribute("data-type") === "levelThree") {
-                    runLevel(levelThreeWords);
-                    }   
-                }
-            }
+            } else if (this.getAttribute("data-type") === "levelThree") {
+                runLevel(levelThreeWords);
+            }   
         })
     }
 })
@@ -27,8 +23,8 @@ var wordArea = document.getElementById('word-area');
  * changes inner HTML to display game screen when called.
  */
 
-let lives = 10;
-let randomWord = '';
+var lives = 10;
+var randomWord = '';
 var currentWord;
 
 function openGameLevelArea() {
@@ -38,9 +34,9 @@ function openGameLevelArea() {
             <p>The aim of the game is to guess the space-related word, letter-by-letter, before your lives are up to blast-off to space.  Use too many of your lives and your spaceship will remain grounded *sad-astronaut-face*</p>
             <div class="difficulty-buttons">
                 <h3>Choose Level</h3>
-                <button class="button-level" class="level1" data-type="levelOne">Level 1</button>
-                <button class="button-level" class="level2" data-type="levelTwo">Level 2</button>
-                <button class="button-level" class="level3" data-type="levelThree">Level 3</button>
+                <button class="button-level level1" data-type="levelOne">Level 1</button>
+                <button class="button-level level2" data-type="levelTwo">Level 2</button>
+                <button class="button-level level3" data-type="levelThree">Level 3</button>
             </div>
         </div>`
 }
@@ -102,6 +98,7 @@ function runLevel(words) {
     openGameScreen();
     setRandomWord();
     console.log(randomWord);
+    checkGuess();
 }
 
 /**
@@ -116,12 +113,38 @@ function setRandomWord() {
     }
     let container = document.getElementById('word-area');
     container.innerHTML = html;
-    guessedLetter()
 }
 
 function checkGuess() {
+   //event.preventDefault();
+    let letters = document.getElementsByClassName("letter");
+    for (let letter of letters) {
+        letter.addEventListener("click", function(event){
+            let letterPressed = this.getAttribute("data-key");
+            if (currentWord.includes(letterPressed)) { 
+               let letterSpans = document.getElementsByTagName("span");
+               for (let span of letterSpans) {
+                   let spanValue = span.getAttribute("data-letter").toLowerCase();
+                   if (letterPressed === spanValue) {
+                        span.classList.remove("hidden-letter");
+                       //console.log("we made it!!");
+                   }
+               }
+            } else { 
+             // lose a life
+             //check if lives = zero
+            } 
+            letter.style.visibility = 'hidden';
+        //   if (this.getAttribute("data-key"))
+        // console.log(this.getAttribute("data-key"));
+        // console.log(typeof(this.getAttribute("data-key")));
 
+       }
+    )
 }
+}
+
+
 
 function checkWord() {
 
