@@ -84,8 +84,8 @@ function openGameScreen() {
                 <div id="reset-button">
                     <button class="reset">Reset</button>
                 </div>
-                <div class="remaining-lives">
-                <p>Remaining Lives: 0</p>
+                <div>
+                <p>Remaining Lives: ${lives}</p>
                 </div>
                 <div class="scores-area">
                     <p class="blast-offs">No of Blast-offs: 0</p>
@@ -136,21 +136,30 @@ function checkGuess() {
                         chosenLetters.push(letterPressed);
                         checkWord();
                    }
-                // check array contains all letters in currentWord
-                // shoot the rocket
-                //show the mission acoomplished page
                }
             } else { 
-             // lose a life
-             //check if lives = zero
+             decreaseLives();
+             console.log(lives);
             } 
+            }
         //   if (this.getAttribute("data-key"))
         // console.log(this.getAttribute("data-key"));
         // console.log(typeof(this.getAttribute("data-key")));
 
-       }
-    )
+        )
+    }
 }
+
+function decreaseLives () {
+    while (lives > 1) {
+    lives--;
+    return lives;
+    }
+    if (lives === 1) {
+        missionAborted();
+    } else {
+        // do nothing
+    }
 }
 
 function checkWord() {
@@ -161,6 +170,7 @@ function checkWord() {
     }
 }
 
+
 function incrementScore() {
 
 }
@@ -169,17 +179,6 @@ function incrementWrongAnswer() {
 
 }
 
-function displayLevelOne() {
-
-}
-
-function displayLevelTwo() {
-
-}
-
-function displayLevelThree() {
-
-}
 
 function missionAccomplished() {
     document.getElementById('container').innerHTML =`
@@ -199,6 +198,8 @@ function missionAccomplished() {
             </div>
         </div>`
         addLevelButtonListeners();
+        chosenLetters = [];
+        lives = 10;
 }
 
 function missionAborted() {
@@ -220,4 +221,6 @@ function missionAborted() {
         </div>
     `
     addLevelButtonListeners();
+    chosenLetters = [];
+    lives = 10;
 }
