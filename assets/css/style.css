@@ -111,10 +111,13 @@ p>span {
     position: absolute;
     left: 20%;
     bottom: 0%;
-    animation: fly 3s .5s ease-in;
 }
 
-/*@keyframes fly { 
+.animation {
+    animation: fly 3s .5s ease-in forwards;
+}
+
+@keyframes fly { 
     from{ bottom: 0%;}
     to{ bottom: 200%;}
-}*/
+}

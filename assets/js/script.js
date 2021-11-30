@@ -3,6 +3,21 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     openGameLevelArea();
+    addLevelButtonListeners();
+})
+
+var wordArea = document.getElementById('word-area');
+
+/**
+ * changes inner HTML to display game screen when called.
+ */
+
+var lives = 10;
+var randomWord = '';
+var currentWord;
+var chosenLetters = [];
+
+function addLevelButtonListeners() {
     let buttons = document.getElementsByClassName("button-level");
     for (let button of buttons) {
         button.addEventListener("click", function(event){
@@ -15,17 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }   
         })
     }
-})
-
-var wordArea = document.getElementById('word-area');
-
-/**
- * changes inner HTML to display game screen when called.
- */
-
-var lives = 10;
-var randomWord = '';
-var currentWord;
+}
 
 function openGameLevelArea() {
     document.getElementById('container').innerHTML = `
@@ -105,8 +110,8 @@ function runLevel(words) {
  * Splits letters of random word into array and sets the word for the new game 
  */
 function setRandomWord() {
-    currentWord = randomWord;
-    let wordArray = currentWord.split("");
+    currentWord = randomWord.toLowerCase();
+    let wordArray = randomWord.split("");
     let html = "";
     for (let i of wordArray) {
       html = html + `<p data-letter="${i}"><span class="hidden-letter" data-letter="${i}">${i}</span></p>`;
@@ -117,24 +122,28 @@ function setRandomWord() {
 
 function checkGuess() {
    //event.preventDefault();
-    let letters = document.getElementsByClassName("letter");
-    for (let letter of letters) {
-        letter.addEventListener("click", function(event){
+    let letterButtons = document.getElementsByClassName("letter");
+    for (let letterButton of letterButtons) {
+        letterButton.addEventListener("click", function(event){
             let letterPressed = this.getAttribute("data-key");
+            letterButton.style.visibility = 'hidden';
             if (currentWord.includes(letterPressed)) { 
                let letterSpans = document.getElementsByTagName("span");
                for (let span of letterSpans) {
                    let spanValue = span.getAttribute("data-letter").toLowerCase();
                    if (letterPressed === spanValue) {
                         span.classList.remove("hidden-letter");
-                       //console.log("we made it!!");
+                        chosenLetters.push(letterPressed);
+                        checkWord();
                    }
+                // check array contains all letters in currentWord
+                // shoot the rocket
+                //show the mission acoomplished page
                }
             } else { 
              // lose a life
              //check if lives = zero
             } 
-            letter.style.visibility = 'hidden';
         //   if (this.getAttribute("data-key"))
         // console.log(this.getAttribute("data-key"));
         // console.log(typeof(this.getAttribute("data-key")));
@@ -144,10 +153,12 @@ function checkGuess() {
 }
 }
 
-
-
 function checkWord() {
-
+    if (currentWord.length === chosenLetters.length){
+        console.log("WINNER!");
+        document.getElementById('rocket').classList.add('animation');
+        setTimeout(missionAccomplished, 3500);
+    }
 }
 
 function incrementScore() {
@@ -171,35 +182,36 @@ function displayLevelThree() {
 }
 
 function missionAccomplished() {
-    document.getElementById('mission-accomplished').innerHTML =`
+    document.getElementById('container').innerHTML =`
     <div id="mission-accomplished">
             <h2>MISSION ACCOMPLISHED </h2>
             <p>WELL DONE SPACE CADET</p>
             <div class="difficulty-buttons">
                 <h3>To play again</h3>
                 <h3>choose level</h3>
-                <button class="button-level" class="level1" data-type="levelOne">Level 1</button>
-                <button class="button-level" class="level2" data-type="levelTwo">Level 2</button>
-                <button class="button-level" class="level3" data-type="levelThree">Level 3</button>
+                <button class="button-level level1" data-type="levelOne">Level 1</button>
+                <button class="button-level level2" data-type="levelTwo">Level 2</button>
+                <button class="button-level level3" data-type="levelThree">Level 3</button>
             </div>
             <div class="scores-area">
                 <p id="blast-offs">No of Blast-offs: 0</p>
                 <p id="grounded"> No of groundings: 0</p>
             </div>
         </div>`
+        addLevelButtonListeners();
 }
 
 function missionAborted() {
-    document.getElementById('mission-aborted').innerHTML =`
+    document.getElementById('container').innerHTML =`
     <div id="mission-aborted">
             <h2>MISSION ABORTED</h2>
             <p>RETURN TO SPACE SCHOOL</p>
             <div class="difficulty-buttons">
                 <h3>To play again</h3>
                 <h3>choose level</h3>
-                <button class="button-level" class="level1" data-type="levelOne">Level 1</button>
-                <button class="button-level" class="level2" data-type="levelTwo">Level 2</button>
-                <button class="button-level" class="level3" data-type="levelThree">Level 3</button>
+                <button class="button-level level1" data-type="levelOne">Level 1</button>
+                <button class="button-level level2" data-type="levelTwo">Level 2</button>
+                <button class="button-level level3" data-type="levelThree">Level 3</button>
             </div>
             <div class="scores-area">
                 <p class="blast-offs">No of Blast-offs: 0</p>
@@ -207,4 +219,5 @@ function missionAborted() {
             </div>
         </div>
     `
+    addLevelButtonListeners();
 }
