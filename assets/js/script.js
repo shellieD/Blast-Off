@@ -51,7 +51,7 @@ function openGameLevelArea() {
 function openGameScreen() {
     document.getElementById('container').innerHTML =`
     <div id="game-area">
-            <h3>Blast off to space by guessing the word correctly!<br>Good luck with your mission spacewalker.</h4>
+            <h3>Blast off to space by guessing the word correctly!<br>Good luck with your mission spacewalker.</h3>
             <div id="guessing-area">
                 <div id="word-area">
                 </div>
@@ -185,6 +185,15 @@ function checkWord() {
     }
 }
 
+function reset() {
+    let resetButton = document.getElementById('reset-button');
+    resetButton.addEventListener('click', function(event) {
+        document.getElemensByTagName('span').classList.add('hidden-letter');
+        chosenLetters = [];
+        lives = 0;
+    }
+    )
+}
 
 function incrementScore() {
     correctScore++;
