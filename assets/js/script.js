@@ -96,6 +96,7 @@ function openGameScreen() {
                 <img src="assets/images/rocket.png" alt="Red rocket" id="rocket">
             </div>
         </div>`
+        reset();
 }
 /** 
  * generates random word from the word arrays depending on the level chosen
@@ -186,14 +187,23 @@ function checkWord() {
 }
 
 function reset() {
-    let resetButton = document.getElementById('reset-button');
-    resetButton.addEventListener('click', function(event) {
-        document.getElemensByTagName('span').classList.add('hidden-letter');
+    let resetButton = document.getElementsByClassName('reset')[0];
+    console.log(resetButton);
+    resetButton.addEventListener('click', function() {
+        let letterButtons = document.getElementsByClassName("letter");
+        for (let letterButton of letterButtons) {
+            letterButton.style.visibility = 'visible';
+        }
         chosenLetters = [];
-        lives = 0;
-    }
-    )
-}
+        lives = 10;
+        document.getElementById('remaining-lives').innerHTML = `<p id="remaining-lives">Remaining Lives: 10</p>`;
+        let letterSpans = document.getElementsByTagName("span");
+        for (let letter of letterSpans){
+            letter.classList.add('hidden-letter');
+        }
+    })     
+}  
+
 
 function incrementScore() {
     correctScore++;
