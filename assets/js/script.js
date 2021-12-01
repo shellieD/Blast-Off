@@ -16,6 +16,8 @@ var lives = 10;
 var randomWord = '';
 var currentWord;
 var chosenLetters = [];
+var correctScore = 0;
+var incorrectScore = 0;
 
 function addLevelButtonListeners() {
     let buttons = document.getElementsByClassName("button-level");
@@ -88,8 +90,8 @@ function openGameScreen() {
                 <p id="remaining-lives">Remaining Lives: ${lives}</p>
                 </div>
                 <div class="scores-area">
-                    <p class="blast-offs">No of Blast-offs: 0</p>
-                    <p class="grounded"> No of groundings: 0</p>
+                    <p class="blast-offs">No of Blast-offs: ${correctScore}</p>
+                    <p class="grounded"> No of groundings: ${incorrectScore}</p>
                 </div>
                 <img src="assets/images/rocket.png" alt="Red rocket" id="rocket">
             </div>
@@ -165,20 +167,36 @@ function decreaseLives () {
 }
 
 function checkWord() {
-    if (currentWord.length === chosenLetters.length){
+    if (currentWord.includes(' ')) {
+        if (currentWord.length - 1 === chosenLetters.length) { 
+        console.log('Win Double Word');
+        document.getElementById('rocket').classList.add('animation');
+        incrementScore();
+        setTimeout(missionAccomplished, 3500);
+        }
+    } else if (currentWord.length === chosenLetters.length){
         console.log("WINNER!");
         document.getElementById('rocket').classList.add('animation');
+        incrementScore();
         setTimeout(missionAccomplished, 3500);
+    } else {
+        if (lives === 0) {
+            incrementWrongAnswer();
+        }
     }
 }
 
 
 function incrementScore() {
-
+    correctScore++;
+    console.log(correctScore);
+    document.getElementsByClassName('blast-offs').innerHTML = `<p class="blast-offs">No of Blast-offs: ${correctScore}</p>`
 }
 
 function incrementWrongAnswer() {
-
+    incorrectScore++;
+    console.log(incorrectScore);
+    document.getElementsByClassName('grounded').innerHTML = `<p class="grounded">No of Groundings: ${incorrectScore}</p>`
 }
 
 
@@ -195,8 +213,8 @@ function missionAccomplished() {
                 <button class="button-level level3" data-type="levelThree">Level 3</button>
             </div>
             <div class="scores-area">
-                <p id="blast-offs">No of Blast-offs: 0</p>
-                <p id="grounded"> No of groundings: 0</p>
+                <p class="blast-offs">No of Blast-offs: ${correctScore}</p>
+                <p id="grounded"> No of groundings: ${incorrectScore}</p>
             </div>
         </div>`
         addLevelButtonListeners();
@@ -217,8 +235,8 @@ function missionAborted() {
                 <button class="button-level level3" data-type="levelThree">Level 3</button>
             </div>
             <div class="scores-area">
-                <p class="blast-offs">No of Blast-offs: 0</p>
-                <p class="grounded"> No of groundings: 0</p>
+                <p class="blast-offs">No of Blast-offs: ${correctScore}</p>
+                <p class="grounded"> No of groundings: ${incorrectScore}</p>
             </div>
         </div>
     `
