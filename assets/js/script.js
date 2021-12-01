@@ -85,7 +85,7 @@ function openGameScreen() {
                     <button class="reset">Reset</button>
                 </div>
                 <div>
-                <p>Remaining Lives: ${lives}</p>
+                <p id="remaining-lives">Remaining Lives: ${lives}</p>
                 </div>
                 <div class="scores-area">
                     <p class="blast-offs">No of Blast-offs: 0</p>
@@ -120,8 +120,13 @@ function setRandomWord() {
     container.innerHTML = html;
 }
 
+/**
+ * Checks whether the currentWord includes the letter guessed.
+ * If the guessed letter is included in the currentWord array, then remove the 'hidden-letter' class to reveal the letter in it's correct position to the user.
+ * Push the chosenLetter (if included in the currentWord array) to the letterPressed array, then run the checkWord function.
+ * If the chosenLetter is not included in the currentWord, then decrease the lives
+ */
 function checkGuess() {
-   //event.preventDefault();
     let letterButtons = document.getElementsByClassName("letter");
     for (let letterButton of letterButtons) {
         letterButton.addEventListener("click", function(event){
@@ -139,26 +144,23 @@ function checkGuess() {
                }
             } else { 
              decreaseLives();
-             console.log(lives);
+             console.log(lives);        
             } 
             }
-        //   if (this.getAttribute("data-key"))
-        // console.log(this.getAttribute("data-key"));
-        // console.log(typeof(this.getAttribute("data-key")));
-
         )
     }
 }
 
+/** 
+ * Decrease lives by 1 if chosenLetter does not appear in currentWord
+ */
 function decreaseLives () {
-    while (lives > 1) {
+    if (lives > 0) {
     lives--;
-    return lives;
+    document.getElementById('remaining-lives').innerHTML = `<p id="remaining-lives">Remaining Lives: ${lives}</p>`;
     }
-    if (lives === 1) {
+    else {
         missionAborted();
-    } else {
-        // do nothing
     }
 }
 
