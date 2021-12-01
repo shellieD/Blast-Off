@@ -161,28 +161,27 @@ function decreaseLives () {
     lives--;
     document.getElementById('remaining-lives').innerHTML = `<p id="remaining-lives">Remaining Lives: ${lives}</p>`;
     }
-    else {
-        missionAborted();
+    else if (lives === 0) {
+            incrementWrongAnswer();
+            missionAborted();
+        }    
     }
-}
 
 function checkWord() {
-    if (currentWord.includes(' ')) {
+    if (currentWord.includes(' ')) { //checking if word contains space e.g black hole and if so checks the length of the currentWord minus 1 (to account for the space) against the length of the chosenLetter array
         if (currentWord.length - 1 === chosenLetters.length) { 
         console.log('Win Double Word');
-        document.getElementById('rocket').classList.add('animation');
         incrementScore();
+        document.getElementById('rocket').classList.add('animation');
         setTimeout(missionAccomplished, 3500);
         }
     } else if (currentWord.length === chosenLetters.length){
         console.log("WINNER!");
-        document.getElementById('rocket').classList.add('animation');
         incrementScore();
+        document.getElementById('rocket').classList.add('animation');
         setTimeout(missionAccomplished, 3500);
     } else {
-        if (lives === 0) {
-            incrementWrongAnswer();
-        }
+        // do nothing
     }
 }
 
