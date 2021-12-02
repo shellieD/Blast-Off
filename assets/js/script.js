@@ -4,6 +4,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     openGameLevelArea();
     addLevelButtonListeners();
+    addSoundButtonListeners();
 })
 
 var wordArea = document.getElementById('word-area');
@@ -15,9 +16,10 @@ var wordArea = document.getElementById('word-area');
 var lives = 10;
 var randomWord = '';
 var currentWord;
-var chosenLetters = [];
+var chosenLetters = []; // creates an empty array for chosen words to be pushed to
 var correctScore = 0;
 var incorrectScore = 0;
+var soundOn = false; //set sounds to be muted by default
 
 function addLevelButtonListeners() {
     let buttons = document.getElementsByClassName("button-level");
@@ -34,6 +36,19 @@ function addLevelButtonListeners() {
     }
 }
 
+function addSoundButtonListeners() {
+    let soundButton = document.getElementsByClassName('sound-button')[0];
+    console.log(soundButton);
+    soundButton.addEventListener('click', function() {
+        if (soundOn === true) {
+            soundButton.innerHTML = `<i class="fas fa-volume-up"></i>`;
+        } else {
+            soundButton.innerHTML = `<i class="fas fa-volume-mute"></i>`;
+        }
+        soundOn = !soundOn;
+})
+}
+
 function openGameLevelArea() {
     document.getElementById('container').innerHTML = `
     <div id="game-level-area">
@@ -44,6 +59,9 @@ function openGameLevelArea() {
                 <button class="button-level level1" data-type="levelOne">Level 1</button>
                 <button class="button-level level2" data-type="levelTwo">Level 2</button>
                 <button class="button-level level3" data-type="levelThree">Level 3</button>
+            </div>
+            <div class="sound-control">
+            <button class="sound-button"><i class="fas fa-volume-mute"></i></button>
             </div>
         </div>`
 }
@@ -93,7 +111,12 @@ function openGameScreen() {
                     <p class="blast-offs">No of Blast-offs: ${correctScore}</p>
                     <p class="grounded"> No of groundings: ${incorrectScore}</p>
                 </div>
+                <div class="sound-control">
+                    <button class="sound-button"><i class="fas fa-volume-mute"></i></button>
+                </div>
+                <div>
                 <img src="assets/images/rocket.png" alt="Red rocket" id="rocket">
+                </div>
             </div>
         </div>`
         reset();
@@ -234,6 +257,9 @@ function missionAccomplished() {
                 <p class="blast-offs">No of Blast-offs: ${correctScore}</p>
                 <p id="grounded"> No of groundings: ${incorrectScore}</p>
             </div>
+            <div class="sound-control">
+                <button class="sound-button"><i class="fas fa-volume-mute"></i></button>
+            </div>
         </div>`
         addLevelButtonListeners();
         chosenLetters = [];
@@ -255,6 +281,9 @@ function missionAborted() {
             <div class="scores-area">
                 <p class="blast-offs">No of Blast-offs: ${correctScore}</p>
                 <p class="grounded"> No of groundings: ${incorrectScore}</p>
+            </div>
+            <div class="sound-control">
+                <button class="sound-button"><i class="fas fa-volume-mute"></i></button>
             </div>
         </div>
     `
