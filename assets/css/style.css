@@ -45,18 +45,23 @@ body {
 }
 
 .difficulty-buttons {
-    padding: 50px;
+    padding: 30px;
     font-size: 1.2rem;
 }
 
-.button-level, .reset {
+.sound-button {
+    font-size: 200%;
+    background-color: transparent;
+}
+
+.button-level, .reset, .sound-button {
     background-color: #341074;
     padding: 15px;
     font-size: 1.2rem;
     cursor: pointer;
     border-radius: 30px;
     box-shadow: 15px 20px 20px 1px #08114B;
-    margin: 20px;
+    margin: 10px;
 }
 
 .button-level:hover, .reset:hover, .letter:hover {
