@@ -40,7 +40,7 @@ function addSoundButtonListeners() {
     let soundButton = document.getElementsByClassName('sound-button')[0];
     console.log(soundButton);
     soundButton.addEventListener('click', function() {
-        if (soundOn === true) {
+        if (soundOn === false) {
             soundButton.innerHTML = `<i class="fas fa-volume-up"></i>`;
         } else {
             soundButton.innerHTML = `<i class="fas fa-volume-mute"></i>`;
@@ -160,15 +160,19 @@ function checkGuess() {
                         span.classList.remove("hidden-letter");
                         chosenLetters.push(letterPressed);
                         checkWord();
-                        if (soundOn === false) {
+                        if (soundOn === true) {
                             let audio = document.getElementById('correct');
-                        audio.play();
+                            audio.play();
                         }
                    }
                }
             } else { 
              decreaseLives();
-             console.log(lives);        
+             console.log(lives);     
+             if (soundOn === true) {
+                let audio = document.getElementById('incorrect');
+                audio.play();
+            }   
             } 
             }
         )
@@ -200,11 +204,19 @@ function checkWord() {
     } else if (currentWord.length === chosenLetters.length){
         console.log("WINNER!");
         incrementScore();
-        document.getElementById('rocket').classList.add('animation');
+        if (soundOn === true) {
+            let audio = document.getElementById('takeoff');
+           setTimeout(rocketSound(audio), 500);
+        } 
+        document.getElementById('rocket').classList.add('animation'); 
         setTimeout(missionAccomplished, 3500);
     } else {
         // do nothing
     }
+}
+
+function rocketSound(audio) {
+    audio.play();
 }
 
 function reset() {
