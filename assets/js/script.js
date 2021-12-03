@@ -193,7 +193,7 @@ function decreaseLives () {
                 let audio = document.getElementById('powerdown');
                 setTimeout(rocketSound(audio), 1000);
             } 
-            //document.getElementById('rocket').classList.add('animation');  NEED TO CREATE A NEW ANIMATION FOR THIS ROCKET
+            document.getElementById('rocket').classList.add('animation-shake');  //NEED TO CREATE A NEW ANIMATION FOR THIS ROCKET
             setTimeout(missionAborted, 3500);
     }
 }
