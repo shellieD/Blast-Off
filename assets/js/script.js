@@ -189,9 +189,14 @@ function decreaseLives () {
     }
     else if (lives === 0) {
             incrementWrongAnswer();
-            missionAborted();
-        }    
+            if (soundOn === true) {
+                let audio = document.getElementById('powerdown');
+                setTimeout(rocketSound(audio), 1000);
+            } 
+            //document.getElementById('rocket').classList.add('animation');  NEED TO CREATE A NEW ANIMATION FOR THIS ROCKET
+            setTimeout(missionAborted, 3500);
     }
+}
 
 function checkWord() {
     if (currentWord.includes(' ')) { //checking if word contains space e.g black hole and if so checks the length of the currentWord minus 1 (to account for the space) against the length of the chosenLetter array
@@ -206,7 +211,7 @@ function checkWord() {
         incrementScore();
         if (soundOn === true) {
             let audio = document.getElementById('takeoff');
-           setTimeout(rocketSound(audio), 500);
+           setTimeout(rocketSound(audio), 1000);
         } 
         document.getElementById('rocket').classList.add('animation'); 
         setTimeout(missionAccomplished, 3500);
