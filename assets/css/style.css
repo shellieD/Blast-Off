@@ -94,6 +94,10 @@ p>span {
     padding: 0px 10px;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 #alphabet {
     margin: 15px;
 }
