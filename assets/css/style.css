@@ -86,6 +86,7 @@ body {
 
 .hidden-letter {
     color: transparent;
+    visibility: hidden;
 }
 
 p>span {
