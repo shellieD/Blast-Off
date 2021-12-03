@@ -21,6 +21,7 @@ var correctScore = 0;
 var incorrectScore = 0;
 var soundOn = false; //set sounds to be muted by default
 
+
 function addLevelButtonListeners() {
     let buttons = document.getElementsByClassName("button-level");
     for (let button of buttons) {
@@ -186,7 +187,11 @@ function decreaseLives () {
     document.getElementById('remaining-lives').innerHTML = `<p id="remaining-lives">Remaining Lives: ${lives}</p>`;
     }
     else if (lives === 0) {
-            incrementWrongAnswer();  //ADD SOMETHING TO HIDE ALL LETTER BUTTONS ONCE LIVES ARE UP
+            incrementWrongAnswer();  
+            let letterButtons = document.getElementsByClassName("letter");
+            for (let letterButton of letterButtons) {
+                letterButton.style.visibility = 'hidden';
+            }
             if (soundOn === true) {
                 let audio = document.getElementById('powerdown');
                 setTimeout(rocketSound(audio), 1000);
@@ -200,11 +205,19 @@ function checkWord() {
     if (currentWord.includes(' ')) { //checking if word contains space e.g black hole and if so checks the length of the currentWord minus 1 (to account for the space) against the length of the chosenLetter array
         if (currentWord.length - 1 === chosenLetters.length) { 
         incrementScore();
+        let letterButtons = document.getElementsByClassName("letter");
+            for (let letterButton of letterButtons) {
+                letterButton.style.visibility = 'hidden';
+            }
         document.getElementById('rocket').classList.add('animation');
         setTimeout(missionAccomplished, 3500);
         }
     } else if (currentWord.length === chosenLetters.length){
         incrementScore();
+        let letterButtons = document.getElementsByClassName("letter");
+            for (let letterButton of letterButtons) {
+                letterButton.style.visibility = 'hidden';
+            }
         if (soundOn === true) {
             let audio = document.getElementById('takeoff');
             setTimeout(rocketSound(audio), 1000);
