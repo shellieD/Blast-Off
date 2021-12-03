@@ -60,9 +60,6 @@ function openGameLevelArea() {
                 <button class="button-level level2" data-type="levelTwo">Level 2</button>
                 <button class="button-level level3" data-type="levelThree">Level 3</button>
             </div>
-            <div class="sound-control">
-            <button class="sound-button"><i class="fas fa-volume-mute"></i></button>
-            </div>
         </div>`
 }
 
@@ -110,9 +107,6 @@ function openGameScreen() {
                 <div class="scores-area">
                     <p class="blast-offs">No of Blast-offs: ${correctScore}</p>
                     <p class="grounded"> No of groundings: ${incorrectScore}</p>
-                </div>
-                <div class="sound-control">
-                    <button class="sound-button"><i class="fas fa-volume-mute"></i></button>
                 </div>
                 <div>
                 <img src="assets/images/rocket.png" alt="Red rocket" id="rocket">
@@ -166,6 +160,10 @@ function checkGuess() {
                         span.classList.remove("hidden-letter");
                         chosenLetters.push(letterPressed);
                         checkWord();
+                        if (soundOn === false) {
+                            let audio = document.getElementById('correct');
+                        audio.play();
+                        }
                    }
                }
             } else { 
@@ -257,9 +255,6 @@ function missionAccomplished() {
                 <p class="blast-offs">No of Blast-offs: ${correctScore}</p>
                 <p id="grounded"> No of groundings: ${incorrectScore}</p>
             </div>
-            <div class="sound-control">
-                <button class="sound-button"><i class="fas fa-volume-mute"></i></button>
-            </div>
         </div>`
         addLevelButtonListeners();
         chosenLetters = [];
@@ -281,9 +276,6 @@ function missionAborted() {
             <div class="scores-area">
                 <p class="blast-offs">No of Blast-offs: ${correctScore}</p>
                 <p class="grounded"> No of groundings: ${incorrectScore}</p>
-            </div>
-            <div class="sound-control">
-                <button class="sound-button"><i class="fas fa-volume-mute"></i></button>
             </div>
         </div>
     `

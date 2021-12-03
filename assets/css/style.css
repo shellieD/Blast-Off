@@ -49,12 +49,16 @@ body {
     font-size: 1.2rem;
 }
 
+.sound-control {
+    text-align: center;
+}
 .sound-button {
     font-size: 200%;
     background-color: transparent;
+    cursor: pointer;
 }
 
-.button-level, .reset, .sound-button {
+.button-level, .reset {
     background-color: #341074;
     padding: 15px;
     font-size: 1.2rem;
