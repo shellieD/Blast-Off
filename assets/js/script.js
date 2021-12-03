@@ -122,7 +122,6 @@ function runLevel(words) {
     randomWord = words[Math.floor(Math.random()*words.length)]
     openGameScreen();
     setRandomWord();
-    console.log(randomWord);
     checkGuess();
 }
 
@@ -167,8 +166,7 @@ function checkGuess() {
                    }
                }
             } else { 
-             decreaseLives();
-             console.log(lives);     
+             decreaseLives();  
              if (soundOn === true) {
                 let audio = document.getElementById('incorrect');
                 audio.play();
@@ -188,7 +186,7 @@ function decreaseLives () {
     document.getElementById('remaining-lives').innerHTML = `<p id="remaining-lives">Remaining Lives: ${lives}</p>`;
     }
     else if (lives === 0) {
-            incrementWrongAnswer();
+            incrementWrongAnswer();  //ADD SOMETHING TO HIDE ALL LETTER BUTTONS ONCE LIVES ARE UP
             if (soundOn === true) {
                 let audio = document.getElementById('powerdown');
                 setTimeout(rocketSound(audio), 1000);
@@ -201,13 +199,11 @@ function decreaseLives () {
 function checkWord() {
     if (currentWord.includes(' ')) { //checking if word contains space e.g black hole and if so checks the length of the currentWord minus 1 (to account for the space) against the length of the chosenLetter array
         if (currentWord.length - 1 === chosenLetters.length) { 
-        console.log('Win Double Word');
         incrementScore();
         document.getElementById('rocket').classList.add('animation');
         setTimeout(missionAccomplished, 3500);
         }
     } else if (currentWord.length === chosenLetters.length){
-        console.log("WINNER!");
         incrementScore();
         if (soundOn === true) {
             let audio = document.getElementById('takeoff');
@@ -226,7 +222,6 @@ function rocketSound(audio) {
 
 function reset() {
     let resetButton = document.getElementsByClassName('reset')[0];
-    console.log(resetButton);
     resetButton.addEventListener('click', function() {
         let letterButtons = document.getElementsByClassName("letter");
         for (let letterButton of letterButtons) {
@@ -245,13 +240,11 @@ function reset() {
 
 function incrementScore() {
     correctScore++;
-    console.log(correctScore);
     document.getElementsByClassName('blast-offs').innerHTML = `<p class="blast-offs">No of Blast-offs: ${correctScore}</p>`
 }
 
 function incrementWrongAnswer() {
     incorrectScore++;
-    console.log(incorrectScore);
     document.getElementsByClassName('grounded').innerHTML = `<p class="grounded">No of Groundings: ${incorrectScore}</p>`
 }
 
