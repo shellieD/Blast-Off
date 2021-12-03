@@ -8,11 +8,61 @@ Link to deployed site:
 <br>
 [Blast-Off - A Modern Alternative to Hangman](https://shellied.github.io/Blast-Off/)
 
-## Strategy
+
+## UX - User Experience Design
 ---
 
 ### User Stories
 
 The site's strategy us based on satisfying the below user stories:
 
+* As a user, when I load the website, I want the purpose of the game to be apparent.
+* As a user, when I load the website, I want the the game to be easy to navigate.
 * 
+
+### Initial Concept
+
+### Wireframes
+
+### Color Scheme
+
+### Typography
+
+### Imagery
+
+## Features
+
+### Existing Features
+
+### Features Left to Implement
+
+## Technologies Used. 
+
+### Gitpod Extensions???
+
+## Testing
+* W3C Validator Testing - HTML / CSS
+* Wave
+* JShint
+* Lighthouse
+
+## Bugs
+### Current Bugs
+### Resolved Bugs
+
+## Deployment
+* Github Pages
+* Forking
+
+## Credits
+
+### Media
+
+### Acknowledgments
+
+
+
+
+
+
+
