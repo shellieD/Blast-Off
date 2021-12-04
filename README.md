@@ -16,9 +16,22 @@ Link to deployed site:
 
 The site's strategy us based on satisfying the below user stories:
 
-* As a user, when I load the website, I want the purpose of the game to be apparent.
-* As a user, when I load the website, I want the the game to be easy to navigate.
-* 
+As a user, when I load the website:-
+
+* I want the purpose of the game to be apparent.
+* I want the game to be easy to navigate.
+* I want the game to be aesthetically pleasing and styled relevant to the nature of the game.
+* I want to be able to control the sound, which I would like to be muted by default.
+* I would like to be able to select the difficulty level of the game.
+
+As a user, when I play the game:-
+
+* I want each screen present to me to have consistent styling to the landing page.
+* I want the controls to be easy to use and intuitive.
+* I want to be able to keep score of the games I win and lose.
+* I want to be able to reset the game.
+* I want the game to be challenging
+* I want the game to have an element of fun 
 
 ### Initial Concept
 
