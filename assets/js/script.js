@@ -218,7 +218,7 @@ function checkWord() {
             for (let letterButton of letterButtons) {
                 letterButton.style.visibility = 'hidden';
             }
-        if (soundOn === true) {
+        if (soundOn) {
             let audio = document.getElementById('takeoff');
             setTimeout(rocketSound(audio), 1000);
         } 
