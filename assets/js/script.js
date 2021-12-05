@@ -200,7 +200,10 @@ function decreaseLives () {
             setTimeout(missionAborted, 3500);
     }
 }
-
+/**
+ * Checks whether the chosen letters match the correct word (by comparing the length of the arrays).  If the length of the length of the arrays match then the user 
+ * has won and the flying rocket animation is triggered and then the mission accomplished screen is shown and the blast off score is incremented.
+ */
 function checkWord() {
     if (currentWord.includes(' ')) { //checking if word contains space e.g black hole and if so checks the length of the currentWord minus 1 (to account for the space) against the length of the chosenLetter array
         if (currentWord.length - 1 === chosenLetters.length) { 
@@ -229,10 +232,17 @@ function checkWord() {
     }
 }
 
+/**
+ * triggers the rocket sound when called
+ */
 function rocketSound(audio) {
     audio.play();
 }
 
+/**
+ * Allows the user to reset the game screen by removing any guessed letters from the array, re-applying the visible property to the letter buttons and re-hing any 
+ * correctly guessed letters
+ */
 function reset() {
     let resetButton = document.getElementsByClassName('reset')[0];
     resetButton.addEventListener('click', function() {
@@ -250,18 +260,23 @@ function reset() {
     })     
 }  
 
-
+/**
+ * Increments the blast-off score when a game is won
+ */
 function incrementScore() {
     correctScore++;
     document.getElementsByClassName('blast-offs').innerHTML = `<p class="blast-offs">No of Blast-offs: ${correctScore}</p>`
 }
 
+/** Increments the grounging score when a game is lost */
 function incrementWrongAnswer() {
     incorrectScore++;
     document.getElementsByClassName('grounded').innerHTML = `<p class="grounded">No of Groundings: ${incorrectScore}</p>`
 }
 
-
+/**
+ * Changes the HTML to show the Mission Accomplished message when a game is won
+ */
 function missionAccomplished() {
     document.getElementById('container').innerHTML =`
     <div id="mission-accomplished">
@@ -284,6 +299,10 @@ function missionAccomplished() {
         lives = 10;
 }
 
+
+/** 
+ * Changes the HTML of the container to show the mission aborted screen if the game is lost
+ */
 function missionAborted() {
     document.getElementById('container').innerHTML =`
     <div id="mission-aborted">
