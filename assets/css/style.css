@@ -201,3 +201,17 @@ p>span {
     }
 }
 
+/*Media Queries*/
+
+@media screen and (max-width: 1200px) {
+    #game-level-area, #game-area, #mission-accomplished, #mission-aborted {
+        margin: 50px ;
+    }
+    
+    #game-level-area p {
+        margin: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 992px) {
