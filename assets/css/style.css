@@ -269,6 +269,18 @@ p>span {
     }
 }
 
+@media screen and (max-width: 870px) {
+    #rocket {
+    height: 160px;
+    left: 1%;
+    }
+}
+@media screen and (max-width: 450px) {
+    #rocket {
+    height: 120px;
+    }
+}
+
 @media screen and (max-width: 415px) {
     .logo h1 {
         font-size: 1.1em;
