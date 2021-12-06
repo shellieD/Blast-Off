@@ -252,6 +252,13 @@ p>span {
     }
 }
 
+@media screen and (max-width: 870px) {
+    #rocket {
+    height: 160px;
+    left: 10%;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .logo h1 {
         font-size: 1.3em;
