@@ -204,12 +204,17 @@ p>span {
 /*Media Queries*/
 
 @media screen and (max-width: 1200px) {
+
     #game-level-area, #game-area, #mission-accomplished, #mission-aborted {
         margin: 50px ;
     }
     
     #game-level-area p {
         margin: 20px;
+    }
+
+    #container {
+        margin-bottom: 25%;
     }
     
 }
@@ -228,11 +233,11 @@ p>span {
         padding: 30px;
     }
 
-    #game-level-area h2 {
+    #game-level-area h2, #mission-accomplished h2, #mission-aborted h2 {
         font-size: 1.4em;
     }
 
-    #game-level-area p {
+    #game-level-area p, #game-area p, #mission-accomplished p, #mission-aborted p {
         font-size: 0.8em;
     }
 
@@ -273,3 +278,30 @@ p>span {
     }
 }
 
+@media screen and (max-width: 375px) {
+    #word-area {
+        font-size: 15px;
+        margin: 30px;
+    }
+
+    #word-area p>span {
+        margin: 0px, 3px;
+        padding: 0px, 3px;
+        border-bottom: 1px solid white;
+    }
+
+    #rocket {
+        height: 100px;
+        left: 3px;
+    }
+
+    .reset-button {
+        padding: 20px;
+        font-size: 1.1rem;
+    }
+
+    .reset {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
