@@ -215,3 +215,61 @@ p>span {
 }
 
 @media screen and (max-width: 992px) {
+    .logo h1 {
+        font-size: 1.5em;
+    }
+
+    .logo p {
+        font-size: 1.5rem;
+    }
+
+    #game-level-area, #game-area, #mission-accomplished, #mission-aborted {
+        margin: 30px;
+        padding: 30px;
+    }
+
+    #game-level-area h2 {
+        font-size: 1.4em;
+    }
+
+    #game-level-area p {
+        font-size: 0.8em;
+    }
+
+    .difficulty-buttons {
+        padding: 20px;
+        font-size: 1.1rem;
+    }
+
+    .button-level {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logo h1 {
+        font-size: 1.3em;
+    }
+
+    .logo p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .logo h1 {
+        font-size: 1.1em;
+    }
+
+    .logo p {
+        font-size: 0.9rem;
+    }
+    
+    #game-level-area, #game-area, #mission-accomplished, #mission-aborted {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
