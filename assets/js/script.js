@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     openGameLevelArea();
     addLevelButtonListeners();
     addSoundButtonListeners();
-})
+});
 
 var wordArea = document.getElementById('word-area');
 
@@ -21,7 +21,9 @@ var correctScore = 0;
 var incorrectScore = 0;
 var soundOn = false; //set sounds to be muted by default
 
-
+/**
+ * Adds event listeners to buttons used to select game levels.  Calls runLevel function to generate random word from correct array for level selected when button clicked
+ */
 function addLevelButtonListeners() {
     let buttons = document.getElementsByClassName("button-level");
     for (let button of buttons) {
@@ -33,10 +35,13 @@ function addLevelButtonListeners() {
             } else if (this.getAttribute("data-type") === "levelThree") {
                 runLevel(levelThreeWords);
             }   
-        })
+        });
     }
 }
 
+/**
+ * Adds event listeners to sound icon to enable user to toggle if sound effects are on or off
+ */
 function addSoundButtonListeners() {
     let soundButton = document.getElementsByClassName('sound-button')[0];
     console.log(soundButton);
@@ -47,9 +52,12 @@ function addSoundButtonListeners() {
             soundButton.innerHTML = `<i class="fas fa-volume-mute"></i>`;
         }
         soundOn = !soundOn;
-})
+});
 }
 
+/**
+ * Inserts HTML into main container for user to select the game level they would like to play.
+ */
 function openGameLevelArea() {
     document.getElementById('container').innerHTML = `
     <div id="game-level-area">
@@ -61,13 +69,17 @@ function openGameLevelArea() {
                 <button class="button-level level2" data-type="levelTwo">Level 2</button>
                 <button class="button-level level3" data-type="levelThree">Level 3</button>
             </div>
-        </div>`
+        </div>`;
 }
 
+/** 
+ * Inserts HTML into main container for user to play game.  Inserts hidden random word, letter buttons, reset buttons, lives and score count.
+ */
 function openGameScreen() {
     document.getElementById('container').innerHTML =`
     <div id="game-area">
-            <h3>Blast off to space by guessing the word correctly!<br>Good luck with your mission spacewalker.</h3>
+            <p>Blast off to space by guessing the word correctly.</p> 
+            <p>Good luck with your mission spacewalker.<p>
             <div id="guessing-area">
                 <div id="word-area">
                 </div>
@@ -113,14 +125,14 @@ function openGameScreen() {
                 <img src="assets/images/rocket.png" alt="Red rocket" id="rocket">
                 </div>
             </div>
-        </div>`
+        </div>`;
         reset();
 }
 /** 
  * generates random word from the word arrays depending on the level chosen
  */
 function runLevel(words) {
-    randomWord = words[Math.floor(Math.random()*words.length)]
+    randomWord = words[Math.floor(Math.random()*words.length)];
     openGameScreen();
     setRandomWord();
     checkGuess();
@@ -174,7 +186,7 @@ function checkGuess() {
             }   
             } 
             }
-        )
+        );
     }
 }
 
@@ -257,7 +269,7 @@ function reset() {
         for (let letter of letterSpans){
             letter.classList.add('hidden-letter');
         }
-    })     
+    });
 }  
 
 /**
@@ -265,13 +277,13 @@ function reset() {
  */
 function incrementScore() {
     correctScore++;
-    document.getElementsByClassName('blast-offs').innerHTML = `<p class="blast-offs">No of Blast-offs: ${correctScore}</p>`
+    document.getElementsByClassName('blast-offs').innerHTML = `<p class="blast-offs">No of Blast-offs: ${correctScore}</p>`;
 }
 
 /** Increments the grounging score when a game is lost */
 function incrementWrongAnswer() {
     incorrectScore++;
-    document.getElementsByClassName('grounded').innerHTML = `<p class="grounded">No of Groundings: ${incorrectScore}</p>`
+    document.getElementsByClassName('grounded').innerHTML = `<p class="grounded">No of Groundings: ${incorrectScore}</p>`;
 }
 
 /**
@@ -293,7 +305,7 @@ function missionAccomplished() {
                 <p class="blast-offs">No of Blast-offs: ${correctScore}</p>
                 <p id="grounded"> No of groundings: ${incorrectScore}</p>
             </div>
-        </div>`
+        </div>`;
         addLevelButtonListeners();
         chosenLetters = [];
         lives = 10;
@@ -319,8 +331,7 @@ function missionAborted() {
                 <p class="blast-offs">No of Blast-offs: ${correctScore}</p>
                 <p class="grounded"> No of groundings: ${incorrectScore}</p>
             </div>
-        </div>
-    `
+        </div>`;
     addLevelButtonListeners();
     chosenLetters = [];
     lives = 10;
