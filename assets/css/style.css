@@ -284,9 +284,9 @@ p>span {
         margin: 30px;
     }
 
-    #word-area p>span {
-        margin: 0px, 3px;
-        padding: 0px, 3px;
+    p>span {
+        margin: 0px 2px;
+        padding: 0px 2px;
         border-bottom: 1px solid white;
     }
 
