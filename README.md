@@ -12,9 +12,9 @@ Link to deployed site:
 
 
 ## UX - User Experience Design
----
+----
 ### The Strategy Plane
-
+----
 #### Initial Concept
 
 This project has been developed as part of the [Code Institute's](https://codeinstitute.net/) Diploma in Full-Stack Software Development.  The aim is to create a game that will demonstrate the skills I have learnt in HTML, CSS and Javascript
@@ -53,6 +53,7 @@ As a user:-
 * I want to be able to use a screen reader, if I need to, to help my play the game. 
 
 ### The Scope Plane
+----
 
 Features which must be included:
 
@@ -76,35 +77,63 @@ Features that would be nice to have:
 * A button to generate a hint to help the user the guess the word.
 
 ### The Structure Plane
+----
 
 ### The Skeleton Plane
+----
 
 #### Wireframes
 
 The below mockups were made using Balsamiq.  The design is simple but effective.  
 
 Mobile Wireframes
+
+<details>
+<summary>Mobile Wireframes</summary>
 <br>
 ![Wireframes](assets/wireframes/mobile-wireframes.png)
+</details>
 
 <br>
 
+<details>
+<summary>Desktop Wireframes</summary>
+<br>
 Desktop Wireframes
 <br>
 ![Wireframes](assets/wireframes/desktop-wireframes1.png)
 ![Wireframes](assets/wireframes/desktop-wireframes2.png)
+</details>
 
-
-
-#### Wireframes
+<br>
 
 ### The Surface Plane
+----
+
+
+#### Imagery
+
+Once satisfied with the layout and structure of the site, I got to work on sourcing a background image that would be striking, pleasing on the eye and would connect the user to the theme of the game. The below background image was found on freepik.com and was created by [Vectorpouch](https://www.freepik.com/vectors/star).  As soon as I saw this background, I knew I had to use it as it was almost exactly what I was envisaging in my mind when thinking about the overall look and feel of the game.  
+
+![Background Image](assets/readme-images/background.png)
+
 
 #### Color Scheme
 
+I wanted to keep the color scheme simple and so opted for plain white text to set a high colour contrast for accessability best practice and used [imagecolorpicker.com](https://imagecolorpicker.com/) to pick a deep blue background colour to use for the main container div on the page, a shade of deep purple for all buttons and a lighter purple to create differentiation when buttons are hovered over.
+
+I used [EightShapes Contrast Grid](https://contrast-grid.eightshapes.com) to ensure that all text and background combinations used met the required contrast ratios in compliance with [WCAG 2.0 minimum contrast](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
+
+![Contrast Grid](assets/readme-images/contrast-grid.png)
+
+
 #### Typography
 
-#### Imagery
+I wanted to give the game a science-fiction feel and what better to do that with monospaced fonts.  I used Space Mono for the main body text and buttons throughout the site and for the page heading I used Syne Mono, which gave a nod towards the 90's American science fiction drama 'The X Files'.  (Moulder and Skully would be proud!) Both were sourced from [Google Fonts](https://fonts.google.com/)
+
+In the below screenshot of the heading, you can see how both fonts pair really nicely together.
+
+![Typography](assets/readme-images/header.png)
 
 ### Features
 
@@ -113,6 +142,10 @@ Desktop Wireframes
 ### Features Left to Implement
 
 ## Technologies Used. 
+
+* HTML
+* CSS
+* JavaScipt
 
 ### Gitpod Extensions???
 
