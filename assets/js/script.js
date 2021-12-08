@@ -1,4 +1,4 @@
-//Wait for the DOM to finish loading before running the game
+//Wait for the DOM to finish loading before running the game.
 //Get the button elements and add event listeners to them.
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 var wordArea = document.getElementById('word-area');
 
 /**
- * changes inner HTML to display game screen when called.
+ * Changes inner HTML to display game screen when called.
  */
 
 var lives = 10;
@@ -22,7 +22,7 @@ var incorrectScore = 0;
 var soundOn = false; //set sounds to be muted by default
 
 /**
- * Adds event listeners to buttons used to select game levels.  Calls runLevel function to generate random word from correct array for level selected when button clicked
+ * Adds event listeners to buttons used to select game levels.  Calls runLevel function to generate random word from correct array for level selected when button clicked.
  */
 function addLevelButtonListeners() {
     let buttons = document.getElementsByClassName("button-level");
@@ -40,7 +40,7 @@ function addLevelButtonListeners() {
 }
 
 /**
- * Adds event listeners to sound icon to enable user to toggle if sound effects are on or off
+ * Adds event listeners to sound icon to enable user to toggle if sound effects are on or off.
  */
 function addSoundButtonListeners() {
     let soundButton = document.getElementsByClassName('sound-button')[0];
@@ -52,7 +52,7 @@ function addSoundButtonListeners() {
             soundButton.innerHTML = `<i class="fas fa-volume-mute"></i>`;
         }
         soundOn = !soundOn;
-});
+    });
 }
 
 /**
@@ -78,8 +78,8 @@ function openGameLevelArea() {
 function openGameScreen() {
     document.getElementById('container').innerHTML =`
     <div id="game-area">
-            <p>Blast off to space by guessing the word correctly.</p> 
-            <p>Good luck with your mission spacewalker.<p>
+        <p>Blast off to space by guessing the word correctly.</p> 
+        <p>Good luck with your mission spacewalker.<p>
             <div id="guessing-area">
                 <div id="word-area">
                 </div>
@@ -115,21 +115,22 @@ function openGameScreen() {
                     <button class="reset">Reset</button>
                 </div>
                 <div>
-                <p id="remaining-lives">Remaining Lives: ${lives}</p>
+                    <p id="remaining-lives">Remaining Lives: ${lives}</p>
                 </div>
                 <div class="scores-area">
                     <p class="blast-offs">No of Blast-offs: ${correctScore}</p>
                     <p class="grounded"> No of groundings: ${incorrectScore}</p>
                 </div>
                 <div>
-                <img src="assets/images/rocket.png" alt="Red rocket" id="rocket">
+                    <img src="assets/images/rocket.png" alt="Red rocket" id="rocket">
                 </div>
             </div>
-        </div>`;
-        reset();
+    </div>`;
+    reset();
 }
+
 /** 
- * generates random word from the word arrays depending on the level chosen
+ * Generates random word from the word arrays depending on the level chosen.
  */
 function runLevel(words) {
     randomWord = words[Math.floor(Math.random()*words.length)];
@@ -139,7 +140,7 @@ function runLevel(words) {
 }
 
 /**
- * Splits letters of random word into array and sets the word for the new game 
+ * Splits letters of random word into array and sets the word for the new game. 
  */
 function setRandomWord() {
     currentWord = randomWord.toLowerCase();
@@ -156,7 +157,7 @@ function setRandomWord() {
  * Checks whether the currentWord includes the letter guessed.
  * If the guessed letter is included in the currentWord array, then remove the 'hidden-letter' class to reveal the letter in it's correct position to the user.
  * Push the chosenLetter (if included in the currentWord array) to the letterPressed array, then run the checkWord function.
- * If the chosenLetter is not included in the currentWord, then decrease the lives
+ * If the chosenLetter is not included in the currentWord, then decrease the lives.
  */
 function checkGuess() {
     let letterButtons = document.getElementsByClassName("letter");
@@ -177,7 +178,7 @@ function checkGuess() {
                             audio.play();
                         }
                    }
-               }
+                }
             } else { 
              decreaseLives();  
              if (soundOn === true) {
@@ -185,39 +186,38 @@ function checkGuess() {
                 audio.play();
             }   
             } 
-            }
-        );
+    });
     }
 }
 
 /** 
- * Decrease lives by 1 if chosenLetter does not appear in currentWord
+ * Decrease lives by 1 if chosenLetter does not appear in currentWord.
  */
 function decreaseLives () {
     if (lives > 0) {
-    lives--;
-    document.getElementById('remaining-lives').innerHTML = `<p id="remaining-lives">Remaining Lives: ${lives}</p>`;
-    }
-    else if (lives === 0) {
-            incrementWrongAnswer();  
-            let letterButtons = document.getElementsByClassName("letter");
-            for (let letterButton of letterButtons) {
-                letterButton.style.visibility = 'hidden';
-            }
-            if (soundOn === true) {
-                let audio = document.getElementById('powerdown');
-                setTimeout(rocketSound(audio), 1000);
-            } 
-            document.getElementById('rocket').classList.add('animation-shake'); 
-            setTimeout(missionAborted, 3500);
+        lives--;
+        document.getElementById('remaining-lives').innerHTML = `<p id="remaining-lives">Remaining Lives: ${lives}</p>`;
+    } else if (lives === 0) {
+        incrementWrongAnswer();  
+        let letterButtons = document.getElementsByClassName("letter");
+        for (let letterButton of letterButtons) {
+            letterButton.style.visibility = 'hidden';
+        }
+        if (soundOn === true) {
+            let audio = document.getElementById('powerdown');
+            setTimeout(rocketSound(audio), 1000);
+        } 
+        document.getElementById('rocket').classList.add('animation-shake'); 
+        setTimeout(missionAborted, 3500);
     }
 }
+
 /**
  * Checks whether the chosen letters match the correct word (by comparing the length of the arrays).  If the length of the length of the arrays match then the user 
  * has won and the flying rocket animation is triggered and then the mission accomplished screen is shown and the blast off score is incremented.
  */
 function checkWord() {
-    if (currentWord.includes(' ')) { //checking if word contains space e.g black hole and if so checks the length of the currentWord minus 1 (to account for the space) against the length of the chosenLetter array
+    if (currentWord.includes(' ')) { // Checking if word contains space e.g black hole and if so checks the length of the currentWord minus 1 (to account for the space) against the length of the chosenLetter array.
         if (currentWord.length - 1 === chosenLetters.length) { 
         incrementScore();
         let letterButtons = document.getElementsByClassName("letter");
@@ -245,7 +245,7 @@ function checkWord() {
 }
 
 /**
- * triggers the rocket sound when called
+ * Triggers the rocket sound when called - added as a slight delay was required on the sound to fit with the animation.
  */
 function rocketSound(audio) {
     audio.play();
@@ -253,7 +253,7 @@ function rocketSound(audio) {
 
 /**
  * Allows the user to reset the game screen by removing any guessed letters from the array, re-applying the visible property to the letter buttons and re-hing any 
- * correctly guessed letters
+ * correctly guessed letters.
  */
 function reset() {
     let resetButton = document.getElementsByClassName('reset')[0];
@@ -273,21 +273,23 @@ function reset() {
 }  
 
 /**
- * Increments the blast-off score when a game is won
+ * Increments the blast-off score when a game is won.
  */
 function incrementScore() {
     correctScore++;
     document.getElementsByClassName('blast-offs').innerHTML = `<p class="blast-offs">No of Blast-offs: ${correctScore}</p>`;
 }
 
-/** Increments the grounging score when a game is lost */
+/** 
+ * Increments the grounding score when a game is lost. 
+*/
 function incrementWrongAnswer() {
     incorrectScore++;
     document.getElementsByClassName('grounded').innerHTML = `<p class="grounded">No of Groundings: ${incorrectScore}</p>`;
 }
 
 /**
- * Changes the HTML to show the Mission Accomplished message when a game is won
+ * Changes the HTML to show the Mission Accomplished message when a game is won.
  */
 function missionAccomplished() {
     document.getElementById('container').innerHTML =`
