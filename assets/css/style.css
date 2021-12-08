@@ -8,6 +8,7 @@
     color: white;
     font-family: 'Space Mono', monospace;
 }
+
 html {
     height: 100%;
 }
@@ -28,6 +29,7 @@ body {
     letter-spacing: 10px;
 }
 
+/* Styles the main container div consistently when inner htmnl is changed*/
 #game-level-area, #game-area, #mission-accomplished, #mission-aborted {
     font-size: 1.1rem;
     margin: 50px 200px;
@@ -323,4 +325,49 @@ p>span {
         padding: 10px;
         font-size: 1rem;
     }
+}
+
+@media screen and (max-width: 320px) {
+    .logo {
+        font-size: 1.5rem;
+        letter-spacing: 5px;
+    }
+
+    .logo p {
+        font-size: 0.7rem;
+    }
+
+    .sound-button {
+        font-size: 120%;
+    }
+
+    #game-level-area h2, #mission-accomplished h2, #mission-aborted h2 {
+        font-size: 1em;
+    }
+
+    #game-level-area p, #game-area p, #mission-accomplished p, #mission-aborted p {
+        font-size: 0.6rem;
+    }
+
+    .difficulty-buttons h3 {
+        font-size: 1rem;
+    }
+
+    #word-area {
+        letter-spacing: 2px;
+        font-size: 10px;
+    }
+
+    #word-area p {
+        font-size: 0.9rem;
+    }
+
+    #alphabet {
+        margin: 2px;
+    }
+
+    .letter {
+        padding: 6px;
+    }
+
 }
