@@ -151,7 +151,10 @@ In the below screenshot of the heading, you can see how both fonts pair really n
 ## Testing
 * W3C Validator Testing - HTML / CSS
 * Wave
-* JShint
+* [JSHint](https://jshint.com/) - I have loaded the JavaScript file into the linter and the following metrics and warnings were produced:-
+ ![JSHint](assets/readme-images/jshint.png)
+ 
+
 * Lighthouse
 
 I have regularly tested all aspects of the games functionality including all buttons, animations, sounds and responsiveness during the build process and have used Dev Tools in Chrome for responsivity across the following devices:-
