@@ -44,7 +44,6 @@ function addLevelButtonListeners() {
  */
 function addSoundButtonListeners() {
     let soundButton = document.getElementsByClassName('sound-button')[0];
-    console.log(soundButton);
     soundButton.addEventListener('click', function() {
         if (soundOn === false) {
             soundButton.innerHTML = `<i class="fas fa-volume-up"></i>`;
