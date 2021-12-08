@@ -370,11 +370,3 @@ p>span {
         padding: 6px;
     }
 }
-
-/* Media Queries for when devices are used in landscape mode*/
-
-@media screen and (orientation: landscape) {
-    html {
-        height: auto;
-    }
-}
