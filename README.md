@@ -82,7 +82,7 @@ Features that would be nice to have:
 ### The Skeleton Plane
 ----
 
-#### Wireframes
+#### Wireframes
 
 The below mockups were made using Balsamiq.  The design is simple but effective.  
 
@@ -91,6 +91,7 @@ Mobile Wireframes
 <details>
 <summary>Mobile Wireframes</summary>
 <br>
+
 ![Wireframes](assets/wireframes/mobile-wireframes.png)
 </details>
 
@@ -101,6 +102,7 @@ Mobile Wireframes
 <br>
 Desktop Wireframes
 <br>
+
 ![Wireframes](assets/wireframes/desktop-wireframes1.png)
 ![Wireframes](assets/wireframes/desktop-wireframes2.png)
 </details>
@@ -109,23 +111,19 @@ Desktop Wireframes
 
 ### The Surface Plane
 ----
-
-
-#### Imagery
+#### Imagery
 
 Once satisfied with the layout and structure of the site, I got to work on sourcing a background image that would be striking, pleasing on the eye and would connect the user to the theme of the game. The below background image was found on freepik.com and was created by [Vectorpouch](https://www.freepik.com/vectors/star).  As soon as I saw this background, I knew I had to use it as it was almost exactly what I was envisaging in my mind when thinking about the overall look and feel of the game.  
 
 ![Background Image](assets/readme-images/background.png)
 
-
-#### Color Scheme
+#### Color Scheme
 
 I wanted to keep the color scheme simple and so opted for plain white text to set a high colour contrast for accessability best practice and used [imagecolorpicker.com](https://imagecolorpicker.com/) to pick a deep blue background colour to use for the main container div on the page, a shade of deep purple for all buttons and a lighter purple to create differentiation when buttons are hovered over.
 
 I used [EightShapes Contrast Grid](https://contrast-grid.eightshapes.com) to ensure that all text and background combinations used met the required contrast ratios in compliance with [WCAG 2.0 minimum contrast](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
 
 ![Contrast Grid](assets/readme-images/contrast-grid.png)
-
 
 #### Typography
 
@@ -147,6 +145,7 @@ In the below screenshot of the heading, you can see how both fonts pair really n
 * CSS
 * JavaScipt
 
+* 
 ### Gitpod Extensions???
 
 ## Testing
@@ -154,6 +153,38 @@ In the below screenshot of the heading, you can see how both fonts pair really n
 * Wave
 * JShint
 * Lighthouse
+
+I have regularly tested all aspects of the games functionality including all buttons, animations, sounds and responsiveness during the build process and have used Dev Tools in Chrome for responsivity across the following devices:-
+
+* Galaxy S5
+* Pixel 3
+* Pixel 2 XL
+* iPhone 5/SE
+* iPhone 6/7/8
+* iPhone 6/7/8 Plus
+* iPhone X
+* iPhone 11 Pro
+* iPad
+* iPad Pro
+* Surface Due
+* Galaxy Fold
+* Nest Hub
+* Nest Hub Max
+
+I have also tested the site physically on the below devices:
+
+* iPhone 13 pro
+* iPhone 11 Pro
+* Mac Book Pro 
+* Dell Lattitude 5310 (Laptop)
+
+I have also regularly tested the site using the following browsers:-
+
+* Chrome
+* Safari
+* Firefox
+* Edge
+
 
 ## Bugs
 ### Current Bugs
@@ -164,6 +195,8 @@ In the below screenshot of the heading, you can see how both fonts pair really n
 * Forking
 
 ## Credits
+
+* [FreeFormatter.com](https://www.freeformatter.com/) - I used the HTML, CSS and JavaScript Beautifiers to 
 
 ### Media
 
