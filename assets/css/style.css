@@ -1,372 +1,397 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne+Mono&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne+Mono&display=swap');
 * {
 	margin: 0;
 	padding: 0;
 	border: none;
-    color: white;
-    font-family: 'Space Mono', monospace;
+	color: white;
+	font-family: 'Space Mono', monospace;
 }
 
 html {
-    height: 100%;
+	height: 100%;
 }
 
 body {
-    height: 100%;
-    background: #004CC6 url('../images/space-background.jpg') no-repeat center center/cover;
+	height: 100%;
+	background: #004CC6 url('../images/space-background.jpg') no-repeat center center/cover;
 }
 
 .logo h1 {
-    font-family: 'Syne Mono', monospace;
+	font-family: 'Syne Mono', monospace;
 }
 
 .logo {
-    font-size: 2rem;
-    margin: auto;
-    text-align: center;
-    letter-spacing: 10px;
+	font-size: 2rem;
+	margin: auto;
+	text-align: center;
+	letter-spacing: 10px;
 }
 
-/* Styles the main container div consistently when inner htmnl is changed*/
-#game-level-area, #game-area, #mission-accomplished, #mission-aborted {
-    font-size: 1.1rem;
-    margin: 20px 200px;
-    padding: 10px;
-    box-sizing: border-box;
-    text-align: center;
-    background-color: rgba(8, 17, 75, 0.7);
-    border-radius: 30px;
-    box-shadow: 15px 20px 20px 1px #08114B;
-    letter-spacing: 3px;
+
+/* Styles the main container div consistently when inner htmnl is changed.*/
+
+#game-level-area,
+#game-area,
+#mission-accomplished,
+#mission-aborted {
+	font-size: 1.1rem;
+	margin: 20px 200px;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	background-color: rgba(8, 17, 75, 0.7);
+	border-radius: 30px;
+	box-shadow: 15px 20px 20px 1px #08114B;
+	letter-spacing: 3px;
 }
 
 #game-level-area p {
-    margin: 30px 100px;
+	margin: 30px 100px;
 }
 
 .difficulty-buttons {
-    padding: 30px;
-    font-size: 1.2rem;
+	padding: 30px;
+	font-size: 1.2rem;
 }
 
 .sound-control {
-    text-align: center;
+	text-align: center;
 }
+
 .sound-button {
-    font-size: 200%;
-    background-color: transparent;
-    cursor: pointer;
+	font-size: 200%;
+	background-color: transparent;
+	cursor: pointer;
 }
 
-.button-level, .reset {
-    background-color: #341074;
-    padding: 15px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 30px;
-    box-shadow: 15px 20px 20px 1px #08114B;
-    margin: 10px;
+
+/* Applies styling to difficulty level buttons and reset buttons.*/
+
+.button-level,
+.reset {
+	background-color: #341074;
+	padding: 15px;
+	font-size: 1.2rem;
+	cursor: pointer;
+	border-radius: 30px;
+	box-shadow: 15px 20px 20px 1px #08114B;
+	margin: 10px;
 }
 
-.button-level:hover, .reset:hover, .letter:hover {
-    background-color: #863C6F;
+
+/* Changes color of buttons on hover.*/
+
+.button-level:hover,
+.reset:hover,
+.letter:hover {
+	background-color: #863C6F;
 }
 
 #game-area {
-    position: relative;
+	position: relative;
 }
 
 #word-area {
-    display: flex;
-    justify-content: center;
-    margin: 50px; 
-    font-size: 2rem;
-    letter-spacing: 10px;
+	display: flex;
+	justify-content: center;
+	margin: 50px;
+	font-size: 2rem;
+	letter-spacing: 10px;
 }
 
+
+/* Sets the colour of the random word to transparent so it is not visible when inserted into the word-area div.*/
+
 .hidden-letter {
-    color: transparent;
+	color: transparent;
 }
 
 p>span {
-    border-bottom: 2px solid white;
-    margin: 0px 4px;
-    padding: 0px 4px;
+	border-bottom: 2px solid white;
+	margin: 0px 4px;
+	padding: 0px 4px;
 }
 
+
+/* Applied to letter buttons once chosen to prevent them from being chosen again.*/
+
 .hidden {
-    visibility: hidden;
+	visibility: hidden;
 }
 
 #alphabet {
-    margin: 15px;
+	margin: 15px;
 }
 
+
+/* Styling for letter buttons. */
+
 .letter {
-    background-color: #341074;
-    padding: 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 30px;
-    box-shadow: 15px 20px 20px 1px #08114B;
-    margin: 1px;
-}
-.letter:hover {
-    background-color: #863C6F;
+	background-color: #341074;
+	padding: 10px;
+	font-size: 1rem;
+	cursor: pointer;
+	border-radius: 30px;
+	box-shadow: 15px 20px 20px 1px #08114B;
+	margin: 1px;
 }
 
 .scores-area p {
-    margin: 15px;
+	margin: 15px;
 }
 
 #rocket {
-    height: 200px;
-    position: absolute;
-    left: 20%;
-    bottom: 0%;
+	height: 200px;
+	position: absolute;
+	left: 20%;
+	bottom: 0%;
 }
+
+
+/* This animation makes the rocket fly off the screen. */
 
 .animation {
-    animation: fly 3s .5s ease-in forwards;
+	animation: fly 3s .5s ease-in forwards;
 }
 
-@keyframes fly { 
-    from{ bottom: 0%;}
-    to{ bottom: 200%;}
+@keyframes fly {
+	from {
+		bottom: 0%;
+	}
+	to {
+		bottom: 200%;
+	}
 }
+
+
+/* This animation makes the rocket wobble and topple over.*/
 
 .animation-shake {
-    animation: shake 2.5s .5s ease-in forwards;
+	animation: shake 2.5s .5s ease-in forwards;
 }
 
 @keyframes shake {
-    0%{
-        transform: translate(0);
-        transform: rotate(5deg);
-    }
-    2%{
-        transform: translate(1em);
-        transform: rotate(-10deg);
-    }
-    4%{
-        transform: translate(1em);
-        transform: rotate(15deg);
-    }
-    6%{
-        transform: translate(1em);
-        transform: rotate(-15deg);
-    }
-    8%{
-        transform: translate(1em);
-        transform: rotate(20deg);
-    }
-    10%{
-        transform: translate(1em);
-        transform: rotate(-20deg);
-    }
-    20%{
-        transform: rotate(25deg);
-    }
-    30%{
-        transform: translate(1em);
-        transform: rotate(-10deg);
-
-    }
-    40%{ 
-        transform: translate(1em);
-        transform: rotate(10deg);
-    }
-    50%{
-        transform: translate(1em);
-        transform: rotate(-10deg);
-    }
-    60%{
-        transform: translate(1em);
-        transform: rotate(10deg);
-    }
-    70%{
-        transform: translate(1em);
-        transform: rotate(-10deg);
-    }
-    80%{
-        transform: translate(1em);
-        transform: rotate(10deg);
-    }
-    90%{
-        transform: translate(1em);
-        transform: rotate(-10deg);
-    }
-    100%{
-        transform: rotate(-90deg);
-    }
+	0% {
+		transform: translate(0);
+		transform: rotate(5deg);
+	}
+	2% {
+		transform: translate(1em);
+		transform: rotate(-10deg);
+	}
+	4% {
+		transform: translate(1em);
+		transform: rotate(15deg);
+	}
+	6% {
+		transform: translate(1em);
+		transform: rotate(-15deg);
+	}
+	8% {
+		transform: translate(1em);
+		transform: rotate(20deg);
+	}
+	10% {
+		transform: translate(1em);
+		transform: rotate(-20deg);
+	}
+	20% {
+		transform: rotate(25deg);
+	}
+	30% {
+		transform: translate(1em);
+		transform: rotate(-10deg);
+	}
+	40% {
+		transform: translate(1em);
+		transform: rotate(10deg);
+	}
+	50% {
+		transform: translate(1em);
+		transform: rotate(-10deg);
+	}
+	60% {
+		transform: translate(1em);
+		transform: rotate(10deg);
+	}
+	70% {
+		transform: translate(1em);
+		transform: rotate(-10deg);
+	}
+	80% {
+		transform: translate(1em);
+		transform: rotate(10deg);
+	}
+	90% {
+		transform: translate(1em);
+		transform: rotate(-10deg);
+	}
+	100% {
+		transform: rotate(-90deg);
+	}
 }
+
 
 /*Media Queries*/
 
 @media screen and (max-width: 1200px) {
-
-    #game-level-area, #game-area, #mission-accomplished, #mission-aborted {
-        margin: 20px 50px ;
-    }
-    
-    #game-level-area p {
-        margin: 20px;
-    }
-
-    #container {
-        margin-bottom: 25%;
-    }
-    
+	#game-level-area,
+	#game-area,
+	#mission-accomplished,
+	#mission-aborted {
+		margin: 20px 50px;
+	}
+	#game-level-area p {
+		margin: 20px;
+	}
+	#container {
+		margin-bottom: 25%;
+	}
 }
 
 @media screen and (max-width: 992px) {
-    .logo h1 {
-        font-size: 1.5em;
-    }
-
-    .logo p {
-        font-size: 1.5rem;
-    }
-
-    #game-level-area, #game-area, #mission-accomplished, #mission-aborted {
-        margin: 20px 30px;
-        padding: 30px;
-    }
-
-    #game-level-area h2, #mission-accomplished h2, #mission-aborted h2 {
-        font-size: 1.4em;
-    }
-
-    #game-level-area p, #game-area p, #mission-accomplished p, #mission-aborted p {
-        font-size: 0.8em;
-    }
-
-    .difficulty-buttons {
-        padding: 20px;
-        font-size: 1.1rem;
-    }
-
-    .button-level {
-        padding: 10px;
-        font-size: 1rem;
-    }
+	.logo h1 {
+		font-size: 1.5em;
+	}
+	.logo p {
+		font-size: 1.5rem;
+	}
+	#game-level-area,
+	#game-area,
+	#mission-accomplished,
+	#mission-aborted {
+		margin: 20px 30px;
+		padding: 30px;
+	}
+	#game-level-area h2,
+	#mission-accomplished h2,
+	#mission-aborted h2 {
+		font-size: 1.4em;
+	}
+	#game-level-area p,
+	#game-area p,
+	#mission-accomplished p,
+	#mission-aborted p {
+		font-size: 0.8em;
+	}
+	.difficulty-buttons {
+		padding: 20px;
+		font-size: 1.1rem;
+	}
+	.button-level {
+		padding: 10px;
+		font-size: 1rem;
+	}
 }
 
 @media screen and (max-width: 870px) {
-    #rocket {
-    height: 160px;
-    left: 10%;
-    }
+	#rocket {
+		height: 160px;
+		left: 10%;
+	}
 }
 
 @media screen and (max-width: 768px) {
-    .logo h1 {
-        font-size: 1.3em;
-    }
-
-    .logo p {
-        font-size: 1.1rem;
-    }
+	.logo h1 {
+		font-size: 1.3em;
+	}
+	.logo p {
+		font-size: 1.1rem;
+	}
 }
 
 @media screen and (max-width: 870px) {
-    #rocket {
-    height: 160px;
-    left: 1%;
-    }
+	#rocket {
+		height: 160px;
+		left: 1%;
+	}
 }
+
 @media screen and (max-width: 450px) {
-    #rocket {
-    height: 120px;
-    }
+	#rocket {
+		height: 120px;
+	}
 }
 
 @media screen and (max-width: 415px) {
-    .logo h1 {
-        font-size: 1.1em;
-    }
-
-    .logo p {
-        font-size: 0.9rem;
-    }
-    
-    #game-level-area, #game-area, #mission-accomplished, #mission-aborted {
-        width: 100%;
-        margin: 2px;
-        padding: 0;
-    }
+	.logo h1 {
+		font-size: 1.1em;
+	}
+	.logo p {
+		font-size: 0.9rem;
+	}
+	#game-level-area,
+	#game-area,
+	#mission-accomplished,
+	#mission-aborted {
+		width: 100%;
+		margin: 2px;
+		padding: 0;
+	}
 }
 
 @media screen and (max-width: 375px) {
-    #word-area {
-        font-size: 15px;
-        margin: 30px;
-    }
-
-    p>span {
-        margin: 0px 2px;
-        padding: 0px 2px;
-        border-bottom: 1px solid white;
-    }
-
-    #rocket {
-        height: 100px;
-        left: 3px;
-    }
-
-    .reset-button {
-        padding: 20px;
-        font-size: 1.1rem;
-    }
-
-    .reset {
-        padding: 10px;
-        font-size: 1rem;
-    }
+	#word-area {
+		font-size: 15px;
+		margin: 30px;
+	}
+	p>span {
+		margin: 0px 2px;
+		padding: 0px 2px;
+		border-bottom: 1px solid white;
+	}
+	#rocket {
+		height: 100px;
+		left: 3px;
+	}
+	.reset-button {
+		padding: 20px;
+		font-size: 1.1rem;
+	}
+	.reset {
+		padding: 10px;
+		font-size: 1rem;
+	}
 }
 
 @media screen and (max-width: 320px) {
-    .logo {
-        font-size: 1.5rem;
-        letter-spacing: 5px;
-    }
-
-    .logo p {
-        font-size: 0.7rem;
-    }
-
-    .sound-button {
-        font-size: 120%;
-    }
-
-    #game-level-area h2, #mission-accomplished h2, #mission-aborted h2 {
-        font-size: 1em;
-    }
-
-    #game-level-area p, #game-area p, #mission-accomplished p, #mission-aborted p {
-        font-size: 0.6rem;
-    }
-
-    .difficulty-buttons h3 {
-        font-size: 1rem;
-    }
-
-    #word-area {
-        letter-spacing: 2px;
-        font-size: 10px;
-    }
-
-    #word-area p {
-        font-size: 0.9rem;
-    }
-
-    #alphabet {
-        margin: 2px;
-    }
-
-    .letter {
-        padding: 6px;
-    }
+	.logo {
+		font-size: 1.5rem;
+		letter-spacing: 5px;
+	}
+	.logo p {
+		font-size: 0.7rem;
+	}
+	.sound-button {
+		font-size: 120%;
+	}
+	#game-level-area h2,
+	#mission-accomplished h2,
+	#mission-aborted h2 {
+		font-size: 1em;
+	}
+	#game-level-area p,
+	#game-area p,
+	#mission-accomplished p,
+	#mission-aborted p {
+		font-size: 0.6rem;
+	}
+	.difficulty-buttons h3 {
+		font-size: 1rem;
+	}
+	#word-area {
+		letter-spacing: 2px;
+		font-size: 10px;
+	}
+	#word-area p {
+		font-size: 0.9rem;
+	}
+	#alphabet {
+		margin: 2px;
+	}
+	.letter {
+		padding: 6px;
+	}
 }
