@@ -4,6 +4,8 @@ This interactive front-end website has been developed to entertain space-enthusi
 
 Blast-off is a modern twist on the good old fashioned, pen and paper based game Hangman.  Instead of slowly bringing an innocent stick-man to his untimely death by hanging, the user is challenged to guess a space-related word, letter-by-letter.  If the word is guessed correctly the rocket will blast-off into space, but if they get the answer wrong or run out of lives, the rocket will remain grounded.
 
+![Am I Responsive Screenshots](assets/readme-images/am-i-responsive.png)
+
 Link to deployed site:
 <br>
 [Blast-Off - A Modern Alternative to Hangman](https://shellied.github.io/Blast-Off/)
@@ -76,6 +78,22 @@ Features that would be nice to have:
 ### The Structure Plane
 
 ### The Skeleton Plane
+
+#### Wireframes
+
+The below mockups were made using Balsamiq.  The design is simple but effective.  
+
+Mobile Wireframes
+<br>
+![Wireframes](assets/wireframes/mobile-wireframes.png)
+
+<br>
+
+Desktop Wireframes
+<br>
+![Wireframes](assets/wireframes/desktop-wireframes1.png)
+![Wireframes](assets/wireframes/desktop-wireframes2.png)
+
 
 
 #### Wireframes
