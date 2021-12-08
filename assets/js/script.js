@@ -1,10 +1,10 @@
 //Wait for the DOM to finish loading before running the game.
 //Get the button elements and add event listeners to them.
 
-document.addEventListener('DOMContentLoaded', function() {
-    openGameLevelArea();
-    addLevelButtonListeners();
-    addSoundButtonListeners();
+document.addEventListener('DOMContentLoaded', function () {
+	openGameLevelArea();
+	addLevelButtonListeners();
+	addSoundButtonListeners();
 });
 
 var wordArea = document.getElementById('word-area');
@@ -25,40 +25,40 @@ var soundOn = false; //set sounds to be muted by default
  * Adds event listeners to buttons used to select game levels.  Calls runLevel function to generate random word from correct array for level selected when button clicked.
  */
 function addLevelButtonListeners() {
-    let buttons = document.getElementsByClassName('button-level');
-    for (let button of buttons) {
-        button.addEventListener('click', function(event){
-            if (this.getAttribute('data-type') === 'levelOne') {
-                runLevel(levelOneWords);
-            } else if (this.getAttribute('data-type') === 'levelTwo') {
-                runLevel(levelTwoWords);
-            } else if (this.getAttribute('data-type') === 'levelThree') {
-                runLevel(levelThreeWords);
-            }   
-        });
-    }
+	let buttons = document.getElementsByClassName('button-level');
+	for (let button of buttons) {
+		button.addEventListener('click', function (event) {
+			if (this.getAttribute('data-type') === 'levelOne') {
+				runLevel(levelOneWords);
+			} else if (this.getAttribute('data-type') === 'levelTwo') {
+				runLevel(levelTwoWords);
+			} else if (this.getAttribute('data-type') === 'levelThree') {
+				runLevel(levelThreeWords);
+			}
+		});
+	}
 }
 
 /**
  * Adds event listeners to sound icon to enable user to toggle if sound effects are on or off.
  */
 function addSoundButtonListeners() {
-    let soundButton = document.getElementsByClassName('sound-button')[0];
-    soundButton.addEventListener('click', function() {
-        if (soundOn === false) {
-            soundButton.innerHTML = `<i class="fas fa-volume-up"></i>`;
-        } else {
-            soundButton.innerHTML = `<i class="fas fa-volume-mute"></i>`;
-        }
-        soundOn = !soundOn;
-    });
+	let soundButton = document.getElementsByClassName('sound-button')[0];
+	soundButton.addEventListener('click', function () {
+		if (soundOn === false) {
+			soundButton.innerHTML = `<i class="fas fa-volume-up"></i>`;
+		} else {
+			soundButton.innerHTML = `<i class="fas fa-volume-mute"></i>`;
+		}
+		soundOn = !soundOn;
+	});
 }
 
 /**
  * Inserts HTML into main container for user to select the game level they would like to play.
  */
 function openGameLevelArea() {
-    document.getElementById('container').innerHTML = `
+	document.getElementById('container').innerHTML = `
     <div id="game-level-area">
             <h2>Welcome Astronauts!</h2>
             <p>The aim of the game is to guess the space-related word, letter-by-letter, before your lives are up to blast-off to space.  Use too many of your lives and your spaceship will remain grounded *sad-astronaut-face*</p>
@@ -75,7 +75,7 @@ function openGameLevelArea() {
  * Inserts HTML into main container for user to play game.  Inserts hidden random word, letter buttons, reset buttons, lives and score count.
  */
 function openGameScreen() {
-    document.getElementById('container').innerHTML =`
+	document.getElementById('container').innerHTML = `
     <div id="game-area">
         <p>Blast off to space by guessing the word correctly.</p> 
         <p>Good luck with your mission spacewalker.<p>
@@ -125,31 +125,31 @@ function openGameScreen() {
                 </div>
             </div>
     </div>`;
-    reset();
+	reset();
 }
 
 /** 
  * Generates random word from the word arrays depending on the level chosen.  Words are passed through the function from the arrays declared in the data.js file.
  */
 function runLevel(words) {
-    randomWord = words[Math.floor(Math.random()*words.length)];
-    openGameScreen();
-    setRandomWord();
-    checkGuess();
+	randomWord = words[Math.floor(Math.random() * words.length)];
+	openGameScreen();
+	setRandomWord();
+	checkGuess();
 }
 
 /**
  * Splits letters of random word into array and sets the word for the new game. 
  */
 function setRandomWord() {
-    currentWord = randomWord.toLowerCase();
-    let wordArray = randomWord.split('');
-    let html ='';
-    for (let i of wordArray) {
-      html = html + `<p data-letter="${i}"><span class="hidden-letter" data-letter="${i}">${i}</span></p>`;
-    }
-    let container = document.getElementById('word-area');
-    container.innerHTML = html;
+	currentWord = randomWord.toLowerCase();
+	let wordArray = randomWord.split('');
+	let html = '';
+	for (let i of wordArray) {
+		html = html + `<p data-letter="${i}"><span class="hidden-letter" data-letter="${i}">${i}</span></p>`;
+	}
+	let container = document.getElementById('word-area');
+	container.innerHTML = html;
 }
 
 /**
@@ -159,56 +159,56 @@ function setRandomWord() {
  * If the chosenLetter is not included in the currentWord, then decrease the lives.
  */
 function checkGuess() {
-    let letterButtons = document.getElementsByClassName('letter');
-    for (let letterButton of letterButtons) {
-        letterButton.addEventListener('click', function(event){
-            let letterPressed = this.getAttribute('data-key');
-            letterButton.style.visibility = 'hidden';
-            if (currentWord.includes(letterPressed)) { 
-               let letterSpans = document.getElementsByTagName('span');
-               for (let span of letterSpans) {
-                   let spanValue = span.getAttribute('data-letter').toLowerCase();
-                   if (letterPressed === spanValue) {
-                        span.classList.remove('hidden-letter');
-                        chosenLetters.push(letterPressed);
-                        checkWord();
-                        if (soundOn === true) {
-                            let audio = document.getElementById('correct');
-                            audio.play();
-                        }
-                   }
-                }
-            } else { 
-             decreaseLives();  
-             if (soundOn === true) {
-                let audio = document.getElementById('incorrect');
-                audio.play();
-            }   
-            } 
-    });
-    }
+	let letterButtons = document.getElementsByClassName('letter');
+	for (let letterButton of letterButtons) {
+		letterButton.addEventListener('click', function (event) {
+			let letterPressed = this.getAttribute('data-key');
+			letterButton.style.visibility = 'hidden';
+			if (currentWord.includes(letterPressed)) {
+				let letterSpans = document.getElementsByTagName('span');
+				for (let span of letterSpans) {
+					let spanValue = span.getAttribute('data-letter').toLowerCase();
+					if (letterPressed === spanValue) {
+						span.classList.remove('hidden-letter');
+						chosenLetters.push(letterPressed);
+						checkWord();
+						if (soundOn === true) {
+							let audio = document.getElementById('correct');
+							audio.play();
+						}
+					}
+				}
+			} else {
+				decreaseLives();
+				if (soundOn === true) {
+					let audio = document.getElementById('incorrect');
+					audio.play();
+				}
+			}
+		});
+	}
 }
 
 /** 
  * Decrease lives by 1 if chosenLetter does not appear in currentWord.
  */
-function decreaseLives () {
-    if (lives > 0) {
-        lives--;
-        document.getElementById('remaining-lives').innerHTML = `<p id="remaining-lives">Remaining Lives: ${lives}</p>`;
-    } else if (lives === 0) {
-        incrementWrongAnswer();  
-        let letterButtons = document.getElementsByClassName('letter');
-        for (let letterButton of letterButtons) {
-            letterButton.style.visibility = 'hidden';
-        }
-        if (soundOn === true) {
-            let audio = document.getElementById('powerdown');
-            setTimeout(rocketSound(audio), 1000);
-        } 
-        document.getElementById('rocket').classList.add('animation-shake'); 
-        setTimeout(missionAborted, 3500);
-    }
+function decreaseLives() {
+	if (lives > 0) {
+		lives--;
+		document.getElementById('remaining-lives').innerHTML = `<p id="remaining-lives">Remaining Lives: ${lives}</p>`;
+	} else if (lives === 0) {
+		incrementWrongAnswer();
+		let letterButtons = document.getElementsByClassName('letter');
+		for (let letterButton of letterButtons) {
+			letterButton.style.visibility = 'hidden';
+		}
+		if (soundOn === true) {
+			let audio = document.getElementById('powerdown');
+			setTimeout(rocketSound(audio), 1000);
+		}
+		document.getElementById('rocket').classList.add('animation-shake');
+		setTimeout(missionAborted, 3500);
+	}
 }
 
 /**
@@ -216,38 +216,38 @@ function decreaseLives () {
  * has won and the flying rocket animation is triggered and then the mission accomplished screen is shown and the blast off score is incremented.
  */
 function checkWord() {
-    if (currentWord.includes(' ')) { // Checking if word contains space e.g black hole and if so checks the length of the currentWord minus 1 (to account for the space) against the length of the chosenLetter array.
-        if (currentWord.length - 1 === chosenLetters.length) { 
-        incrementScore();
-        let letterButtons = document.getElementsByClassName('letter');
-            for (let letterButton of letterButtons) {
-                letterButton.style.visibility = 'hidden';
-            }
-        document.getElementById('rocket').classList.add('animation');
-        setTimeout(missionAccomplished, 3500);
-        }
-    } else if (currentWord.length === chosenLetters.length){
-        incrementScore();
-        let letterButtons = document.getElementsByClassName('letter');
-            for (let letterButton of letterButtons) {
-                letterButton.style.visibility = 'hidden';
-            }
-        if (soundOn) {
-            let audio = document.getElementById('takeoff');
-            setTimeout(rocketSound(audio), 1000);
-        } 
-        document.getElementById('rocket').classList.add('animation'); 
-        setTimeout(missionAccomplished, 3500);
-    } else {
-        // do nothing
-    }
+	if (currentWord.includes(' ')) { // Checking if word contains space e.g black hole and if so checks the length of the currentWord minus 1 (to account for the space) against the length of the chosenLetter array.
+		if (currentWord.length - 1 === chosenLetters.length) {
+			incrementScore();
+			let letterButtons = document.getElementsByClassName('letter');
+			for (let letterButton of letterButtons) {
+				letterButton.style.visibility = 'hidden';
+			}
+			document.getElementById('rocket').classList.add('animation');
+			setTimeout(missionAccomplished, 3500);
+		}
+	} else if (currentWord.length === chosenLetters.length) {
+		incrementScore();
+		let letterButtons = document.getElementsByClassName('letter');
+		for (let letterButton of letterButtons) {
+			letterButton.style.visibility = 'hidden';
+		}
+		if (soundOn) {
+			let audio = document.getElementById('takeoff');
+			setTimeout(rocketSound(audio), 1000);
+		}
+		document.getElementById('rocket').classList.add('animation');
+		setTimeout(missionAccomplished, 3500);
+	} else {
+		// do nothing
+	}
 }
 
 /**
  * Triggers the rocket sound when called - added as a slight delay was required on the sound to fit with the animation.
  */
 function rocketSound(audio) {
-    audio.play();
+	audio.play();
 }
 
 /**
@@ -255,43 +255,43 @@ function rocketSound(audio) {
  * correctly guessed letters.
  */
 function reset() {
-    let resetButton = document.getElementsByClassName('reset')[0];
-    resetButton.addEventListener('click', function() {
-        let letterButtons = document.getElementsByClassName('letter');
-        for (let letterButton of letterButtons) {
-            letterButton.style.visibility = 'visible';
-        }
-        chosenLetters = [];
-        lives = 10;
-        document.getElementById('remaining-lives').innerHTML = `<p id="remaining-lives">Remaining Lives: 10</p>`;
-        let letterSpans = document.getElementsByTagName('span');
-        for (let letter of letterSpans){
-            letter.classList.add('hidden-letter');
-        }
-    });
-}  
+	let resetButton = document.getElementsByClassName('reset')[0];
+	resetButton.addEventListener('click', function () {
+		let letterButtons = document.getElementsByClassName('letter');
+		for (let letterButton of letterButtons) {
+			letterButton.style.visibility = 'visible';
+		}
+		chosenLetters = [];
+		lives = 10;
+		document.getElementById('remaining-lives').innerHTML = `<p id="remaining-lives">Remaining Lives: 10</p>`;
+		let letterSpans = document.getElementsByTagName('span');
+		for (let letter of letterSpans) {
+			letter.classList.add('hidden-letter');
+		}
+	});
+}
 
 /**
  * Increments the blast-off score when a game is won.
  */
 function incrementScore() {
-    correctScore++;
-    document.getElementsByClassName('blast-offs').innerHTML = `<p class="blast-offs">No of Blast-offs: ${correctScore}</p>`;
+	correctScore++;
+	document.getElementsByClassName('blast-offs').innerHTML = `<p class="blast-offs">No of Blast-offs: ${correctScore}</p>`;
 }
 
 /** 
  * Increments the grounding score when a game is lost. 
-*/
+ */
 function incrementWrongAnswer() {
-    incorrectScore++;
-    document.getElementsByClassName('grounded').innerHTML = `<p class="grounded">No of Groundings: ${incorrectScore}</p>`;
+	incorrectScore++;
+	document.getElementsByClassName('grounded').innerHTML = `<p class="grounded">No of Groundings: ${incorrectScore}</p>`;
 }
 
 /**
  * Changes the HTML to show the Mission Accomplished message when a game is won.
  */
 function missionAccomplished() {
-    document.getElementById('container').innerHTML =`
+	document.getElementById('container').innerHTML = `
     <div id="mission-accomplished">
             <h2>MISSION ACCOMPLISHED </h2>
             <p>WELL DONE SPACE CADET</p>
@@ -307,9 +307,9 @@ function missionAccomplished() {
                 <p id="grounded"> No of groundings: ${incorrectScore}</p>
             </div>
         </div>`;
-        addLevelButtonListeners();
-        chosenLetters = [];
-        lives = 10;
+	addLevelButtonListeners();
+	chosenLetters = [];
+	lives = 10;
 }
 
 
@@ -317,7 +317,7 @@ function missionAccomplished() {
  * Changes the HTML of the container to show the mission aborted screen if the game is lost
  */
 function missionAborted() {
-    document.getElementById('container').innerHTML =`
+	document.getElementById('container').innerHTML = `
     <div id="mission-aborted">
             <h2>MISSION ABORTED</h2>
             <p>RETURN TO SPACE SCHOOL</p>
@@ -333,7 +333,7 @@ function missionAborted() {
                 <p class="grounded"> No of groundings: ${incorrectScore}</p>
             </div>
         </div>`;
-    addLevelButtonListeners();
-    chosenLetters = [];
-    lives = 10;
+	addLevelButtonListeners();
+	chosenLetters = [];
+	lives = 10;
 }
