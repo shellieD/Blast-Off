@@ -1,7 +1,7 @@
 //Wait for the DOM to finish loading before running the game.
 //Get the button elements and add event listeners to them.
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
     openGameLevelArea();
     addLevelButtonListeners();
     addSoundButtonListeners();
@@ -25,14 +25,14 @@ var soundOn = false; //set sounds to be muted by default
  * Adds event listeners to buttons used to select game levels.  Calls runLevel function to generate random word from correct array for level selected when button clicked.
  */
 function addLevelButtonListeners() {
-    let buttons = document.getElementsByClassName("button-level");
+    let buttons = document.getElementsByClassName('button-level');
     for (let button of buttons) {
-        button.addEventListener("click", function(event){
-            if (this.getAttribute("data-type") === "levelOne") {
+        button.addEventListener('click', function(event){
+            if (this.getAttribute('data-type') === 'levelOne') {
                 runLevel(levelOneWords);
-            } else if (this.getAttribute("data-type") === "levelTwo") {
+            } else if (this.getAttribute('data-type') === 'levelTwo') {
                 runLevel(levelTwoWords);
-            } else if (this.getAttribute("data-type") === "levelThree") {
+            } else if (this.getAttribute('data-type') === 'levelThree') {
                 runLevel(levelThreeWords);
             }   
         });
@@ -65,9 +65,9 @@ function openGameLevelArea() {
             <p>The aim of the game is to guess the space-related word, letter-by-letter, before your lives are up to blast-off to space.  Use too many of your lives and your spaceship will remain grounded *sad-astronaut-face*</p>
             <div class="difficulty-buttons">
                 <h3>Choose Level</h3>
-                <button class="button-level level1" data-type="levelOne">Level 1</button>
-                <button class="button-level level2" data-type="levelTwo">Level 2</button>
-                <button class="button-level level3" data-type="levelThree">Level 3</button>
+                <button class="button-level level1" data-type="levelOne" aria-label="Level One">Level 1</button>
+                <button class="button-level level2" data-type="levelTwo" aria-label="Level Two">Level 2</button>
+                <button class="button-level level3" data-type="levelThree" aria-label="Level Three">Level 3</button>
             </div>
         </div>`;
 }
@@ -84,35 +84,35 @@ function openGameScreen() {
                 <div id="word-area">
                 </div>
                 <div id="alphabet">
-                    <button class="letter" data-key="a">A</button>
-                    <button class="letter" data-key="b">B</button>
-                    <button class="letter" data-key="c">C</button>
-                    <button class="letter" data-key="d">D</button>
-                    <button class="letter" data-key="e">E</button>
-                    <button class="letter" data-key="f">F</button>
-                    <button class="letter" data-key="g">G</button>
-                    <button class="letter" data-key="h">H</button>
-                    <button class="letter" data-key="i">I</button>
-                    <button class="letter" data-key="j">J</button>
-                    <button class="letter" data-key="k">K</button>
-                    <button class="letter" data-key="l">L</button>
-                    <button class="letter" data-key="m">M</button>
-                    <button class="letter" data-key="n">N</button>
-                    <button class="letter" data-key="o">O</button>
-                    <button class="letter" data-key="p">P</button>
-                    <button class="letter" data-key="q">Q</button>
-                    <button class="letter" data-key="r">R</button>
-                    <button class="letter" data-key="s">S</button>
-                    <button class="letter" data-key="t">T</button>
-                    <button class="letter" data-key="u">U</button>
-                    <button class="letter" data-key="v">V</button>
-                    <button class="letter" data-key="w">W</button>
-                    <button class="letter" data-key="x">X</button>
-                    <button class="letter" data-key="y">Y</button>
-                    <button class="letter" data-key="z">Z</button>
+                    <button class="letter" data-key="a" aria-label="Letter A">A</button>
+                    <button class="letter" data-key="b" aria-label="Letter B">B</button>
+                    <button class="letter" data-key="c" aria-label="Letter C">C</button>
+                    <button class="letter" data-key="d" aria-label="Letter D">D</button>
+                    <button class="letter" data-key="e" aria-label="Letter E">E</button>
+                    <button class="letter" data-key="f" aria-label="Letter F">F</button>
+                    <button class="letter" data-key="g" aria-label="Letter G">G</button>
+                    <button class="letter" data-key="h" aria-label="Letter H">H</button>
+                    <button class="letter" data-key="i" aria-label="Letter I">I</button>
+                    <button class="letter" data-key="j" aria-label="Letter J">J</button>
+                    <button class="letter" data-key="k" aria-label="Letter K">K</button>
+                    <button class="letter" data-key="l" aria-label="Letter L">L</button>
+                    <button class="letter" data-key="m" aria-label="Letter M">M</button>
+                    <button class="letter" data-key="n" aria-label="Letter N">N</button>
+                    <button class="letter" data-key="o" aria-label="Letter O">O</button>
+                    <button class="letter" data-key="p" aria-label="Letter P">P</button>
+                    <button class="letter" data-key="q" aria-label="Letter Q">Q</button>
+                    <button class="letter" data-key="r" aria-label="Letter R">R</button>
+                    <button class="letter" data-key="s" aria-label="Letter S">S</button>
+                    <button class="letter" data-key="t" aria-label="Letter T">T</button>
+                    <button class="letter" data-key="u" aria-label="Letter U">U</button>
+                    <button class="letter" data-key="v" aria-label="Letter V">V</button>
+                    <button class="letter" data-key="w" aria-label="Letter W">W</button>
+                    <button class="letter" data-key="x" aria-label="Letter X">X</button>
+                    <button class="letter" data-key="y" aria-label="Letter Y">Y</button>
+                    <button class="letter" data-key="z" aria-label="Letter Z">Z</button>
                 </div>
                 <div id="reset-button">
-                    <button class="reset">Reset</button>
+                    <button class="reset" aria-label="Reset">Reset</button>
                 </div>
                 <div>
                     <p id="remaining-lives">Remaining Lives: ${lives}</p>
@@ -130,7 +130,7 @@ function openGameScreen() {
 }
 
 /** 
- * Generates random word from the word arrays depending on the level chosen.
+ * Generates random word from the word arrays depending on the level chosen.  Words are passed through the function from the arrays declared in the data.js file.
  */
 function runLevel(words) {
     randomWord = words[Math.floor(Math.random()*words.length)];
@@ -144,8 +144,8 @@ function runLevel(words) {
  */
 function setRandomWord() {
     currentWord = randomWord.toLowerCase();
-    let wordArray = randomWord.split("");
-    let html = "";
+    let wordArray = randomWord.split('');
+    let html ='';
     for (let i of wordArray) {
       html = html + `<p data-letter="${i}"><span class="hidden-letter" data-letter="${i}">${i}</span></p>`;
     }
@@ -160,17 +160,17 @@ function setRandomWord() {
  * If the chosenLetter is not included in the currentWord, then decrease the lives.
  */
 function checkGuess() {
-    let letterButtons = document.getElementsByClassName("letter");
+    let letterButtons = document.getElementsByClassName('letter');
     for (let letterButton of letterButtons) {
-        letterButton.addEventListener("click", function(event){
-            let letterPressed = this.getAttribute("data-key");
+        letterButton.addEventListener('click', function(event){
+            let letterPressed = this.getAttribute('data-key');
             letterButton.style.visibility = 'hidden';
             if (currentWord.includes(letterPressed)) { 
-               let letterSpans = document.getElementsByTagName("span");
+               let letterSpans = document.getElementsByTagName('span');
                for (let span of letterSpans) {
-                   let spanValue = span.getAttribute("data-letter").toLowerCase();
+                   let spanValue = span.getAttribute('data-letter').toLowerCase();
                    if (letterPressed === spanValue) {
-                        span.classList.remove("hidden-letter");
+                        span.classList.remove('hidden-letter');
                         chosenLetters.push(letterPressed);
                         checkWord();
                         if (soundOn === true) {
@@ -199,7 +199,7 @@ function decreaseLives () {
         document.getElementById('remaining-lives').innerHTML = `<p id="remaining-lives">Remaining Lives: ${lives}</p>`;
     } else if (lives === 0) {
         incrementWrongAnswer();  
-        let letterButtons = document.getElementsByClassName("letter");
+        let letterButtons = document.getElementsByClassName('letter');
         for (let letterButton of letterButtons) {
             letterButton.style.visibility = 'hidden';
         }
@@ -220,7 +220,7 @@ function checkWord() {
     if (currentWord.includes(' ')) { // Checking if word contains space e.g black hole and if so checks the length of the currentWord minus 1 (to account for the space) against the length of the chosenLetter array.
         if (currentWord.length - 1 === chosenLetters.length) { 
         incrementScore();
-        let letterButtons = document.getElementsByClassName("letter");
+        let letterButtons = document.getElementsByClassName('letter');
             for (let letterButton of letterButtons) {
                 letterButton.style.visibility = 'hidden';
             }
@@ -229,7 +229,7 @@ function checkWord() {
         }
     } else if (currentWord.length === chosenLetters.length){
         incrementScore();
-        let letterButtons = document.getElementsByClassName("letter");
+        let letterButtons = document.getElementsByClassName('letter');
             for (let letterButton of letterButtons) {
                 letterButton.style.visibility = 'hidden';
             }
@@ -258,14 +258,14 @@ function rocketSound(audio) {
 function reset() {
     let resetButton = document.getElementsByClassName('reset')[0];
     resetButton.addEventListener('click', function() {
-        let letterButtons = document.getElementsByClassName("letter");
+        let letterButtons = document.getElementsByClassName('letter');
         for (let letterButton of letterButtons) {
             letterButton.style.visibility = 'visible';
         }
         chosenLetters = [];
         lives = 10;
         document.getElementById('remaining-lives').innerHTML = `<p id="remaining-lives">Remaining Lives: 10</p>`;
-        let letterSpans = document.getElementsByTagName("span");
+        let letterSpans = document.getElementsByTagName('span');
         for (let letter of letterSpans){
             letter.classList.add('hidden-letter');
         }
@@ -299,9 +299,9 @@ function missionAccomplished() {
             <div class="difficulty-buttons">
                 <h3>To play again</h3>
                 <h3>choose level</h3>
-                <button class="button-level level1" data-type="levelOne">Level 1</button>
-                <button class="button-level level2" data-type="levelTwo">Level 2</button>
-                <button class="button-level level3" data-type="levelThree">Level 3</button>
+                <button class="button-level level1" data-type="levelOne" aria-label="Level One">Level 1</button>
+                <button class="button-level level2" data-type="levelTwo" aria-label="Level Two">Level 2</button>
+                <button class="button-level level3" data-type="levelThree" aria-label="Level Three">Level 3</button>
             </div>
             <div class="scores-area">
                 <p class="blast-offs">No of Blast-offs: ${correctScore}</p>
@@ -325,9 +325,9 @@ function missionAborted() {
             <div class="difficulty-buttons">
                 <h3>To play again</h3>
                 <h3>choose level</h3>
-                <button class="button-level level1" data-type="levelOne">Level 1</button>
-                <button class="button-level level2" data-type="levelTwo">Level 2</button>
-                <button class="button-level level3" data-type="levelThree">Level 3</button>
+                <button class="button-level level1" data-type="levelOne" aria-label="Level One">Level 1</button>
+                <button class="button-level level2" data-type="levelTwo" aria-label="Level Two">Level 2</button>
+                <button class="button-level level3" data-type="levelThree" aria-label="Level Three">Level 3</button>
             </div>
             <div class="scores-area">
                 <p class="blast-offs">No of Blast-offs: ${correctScore}</p>
