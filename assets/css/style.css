@@ -32,7 +32,7 @@ body {
 /* Styles the main container div consistently when inner htmnl is changed*/
 #game-level-area, #game-area, #mission-accomplished, #mission-aborted {
     font-size: 1.1rem;
-    margin: 50px 200px;
+    margin: 20px 200px;
     padding: 50px;
     box-sizing: border-box;
     text-align: center;
@@ -208,7 +208,7 @@ p>span {
 @media screen and (max-width: 1200px) {
 
     #game-level-area, #game-area, #mission-accomplished, #mission-aborted {
-        margin: 50px ;
+        margin: 20px 50px ;
     }
     
     #game-level-area p {
@@ -231,7 +231,7 @@ p>span {
     }
 
     #game-level-area, #game-area, #mission-accomplished, #mission-aborted {
-        margin: 30px;
+        margin: 20px 30px;
         padding: 30px;
     }
 
@@ -294,7 +294,7 @@ p>span {
     
     #game-level-area, #game-area, #mission-accomplished, #mission-aborted {
         width: 100%;
-        margin: 0;
+        margin: 2px;
         padding: 0;
     }
 }
