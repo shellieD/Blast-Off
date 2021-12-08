@@ -33,7 +33,7 @@ body {
 #game-level-area, #game-area, #mission-accomplished, #mission-aborted {
     font-size: 1.1rem;
     margin: 20px 200px;
-    padding: 50px;
+    padding: 10px;
     box-sizing: border-box;
     text-align: center;
     background-color: rgba(8, 17, 75, 0.7);
