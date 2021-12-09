@@ -311,10 +311,9 @@ I deliberated over whether it should remain as a liveable bug as I didn't have a
 
 <br>
 
-[Issue with Long Words](assets/docs/readme-images/felx.png)
+![Issue with Long Words](assets/docs/readme-images/flex.png)
 
 <br>
-
 
 #### Validator Tests
 
