@@ -57,7 +57,7 @@ As a user:-
 
 Features which must be included:
 
-* Instructions on how to play the game are easy to find and understand.
+* Instructions on how to play the game which are easy to find and understand.
 * Three levels of difficulty - easy/well-known words used for level one and more difficult/obscure words for level three and something in between for level two.
 * The game should fit the viewport of the device and no scrolling should be required.
 * There should be an option to reset the game board if the user wishes to start again.
@@ -69,12 +69,12 @@ Features that should be included:
 
 * There should be an animation when the user wins or loses a game to make the game more fun to play.
 * There should be sound effects to alert the user when a correct or incorrect letter has been picked and when the rocket takes off, or fails to take off.
-* There should be a toggle button to all the user turn sounds on and off as desired.  This should be visible at all times throughout the game.
+* There should be a toggle button to allow the user turn sounds on and off as desired.  This should be visible at all times throughout the game.
 
 Features that would be nice to have:
 
 * Display the definition or facts about the correctly guessed word to provide a learning opportunity for the user.
-* A button to generate a hint to help the user the guess the word.
+* A button to generate a hint to help the user the guess more difficult words.
 
 ### The Structure Plane
 ----
@@ -119,7 +119,7 @@ Once satisfied with the layout and structure of the site, I got to work on sourc
 
 #### Color Scheme
 
-I wanted to keep the color scheme simple and so opted for plain white text to set a high colour contrast for accessability best practice and used [imagecolorpicker.com](https://imagecolorpicker.com/) to pick a deep blue background colour to use for the main container div on the page, a shade of deep purple for all buttons and a lighter purple to create differentiation when buttons are hovered over.
+I wanted to keep the color scheme simple and so opted for plain white text to set a high colour contrast for accessability best practice and used [imagecolorpicker.com](https://imagecolorpicker.com/) to pull colours from the background image.  I chose a deep blue background colour to use for the main container div on the page, a shade of deep purple for all buttons and a lighter purple to create differentiation when buttons are hovered over.
 
 I used [EightShapes Contrast Grid](https://contrast-grid.eightshapes.com) to ensure that all text and background combinations used met the required contrast ratios in compliance with [WCAG 2.0 minimum contrast](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
 
@@ -127,17 +127,87 @@ I used [EightShapes Contrast Grid](https://contrast-grid.eightshapes.com) to ens
 
 #### Typography
 
-I wanted to give the game a science-fiction feel and what better to do that with monospaced fonts.  I used Space Mono for the main body text and buttons throughout the site and for the page heading I used Syne Mono, which gave a nod towards the 90's American science fiction drama 'The X Files'.  (Moulder and Skully would be proud!) Both were sourced from [Google Fonts](https://fonts.google.com/)
+I wanted to give the game a science-fiction feel and what better to do that with monospaced fonts.  I used 'Space Mono' for the main body text and buttons throughout the site and for the page heading I used Syne Mono, which gives a nod towards the 90's American science fiction drama 'The X Files'.  (Moulder and Skully would be proud!) Both were sourced from [Google Fonts](https://fonts.google.com/)
 
-In the below screenshot of the heading, you can see how both fonts pair really nicely together.
+In the below screenshot, you can see how both fonts pair really nicely together.
 
 ![Typography](assets/readme-images/header.png)
 
 ### Features
 
-### Existing Features
+#### Existing Features
+The main heading and tag line ensure that the users who are already familiar with 'hangman' will know they have landed on a game page.  See above image under 'Typography'.
 
-### Features Left to Implement
+Directly underneath the heading is a sound toggle button which will change to show the user whether the sound is on or off.  By default the sounds are set to mute to provide a good user experience (no one wants to be caught out whilst playing games at work!)
+
+<br>
+
+Sound Muted 
+
+<br>
+
+![Sound off](assets/readme-images/sound-off.png) 
+
+Sound Un-muted 
+
+<br>
+
+![Sound on](assets/readme-images/sound-on.png)
+
+<br>
+
+For users who are unfamiliar with hangman, there is a brief outline of the rules, which are simple and easy to understand.
+
+<br>
+
+![Rules of Play](assets/readme-images/rules.png)
+
+Underneath the rules there are buttons to allow the user to select the difficulty of the level at the start of the game.  These same buttons are also present on the 'Mission Accomplished' screen when a user has won a game, and the 'Mission Aborted' screen when a user has lost a game.  This provides really nice consistency across all parts of the game.  The user does not have to go searching for ways to change the levels at any point as they are displayed on all screens with the exception of the game screen.
+
+<br>
+ 
+ ![Difficulty Buttons](assets/readme-images/level-buttons.png)
+
+ <br>
+
+ When the user selects a level the HTML in the container is replaced with the game screen.  The game screen contains:-
+
+ * Another brief description of the rules.  
+ * Words of encouragement for the player.
+ * A hidden word, the length of which is indicated by a dashed line for each letter in the word.
+ * Letter buttons, which change colour when hovered over and disappear when chosen to prevent them being chosen again. 
+ * A counter to show how many remaining lives are left.  The counter decreases by one each time an incorrect letter is guessed and each game starts with 10 lives.
+ * A counter to show how many 'Blast-Offs' (games won) they have achieved and similarly a counter to show how many 'Groundings' (games lost).  On the first game, these are set to zero to show no games yet won or lost.
+ * A reset button that will restart the game from the beginning, hiding any correctly guessed letters again and reshowing any letter buttons that have been hidden - NOTE: this does not generate a new word, but simply allows the user to restart guessing the same word.  In hindsight, I think generating a new word here from the same difficulty level may have been better.
+ * A vectogram of a rocket.  This is animated when a game is won or lost.  If the former, the rocket will blast off the page, if the latter, it wobbles, and topples over.
+
+ If the sounds are on, the follow events will trigger sounds effects:-
+
+ * Choosing a correct letter will trigger a coin-collect type sound.
+ * Choosing an incorrect letter will trigger a bubble pop type sound (which ties in nicely with the letter button disappearing - almost popping away).
+ * When the rocket blasts off, a take-off type sound is triggered.
+ * When the rocket is grounded, an engine power-down sound will be triggered.
+
+ <br>
+
+ ![Game Screen](assets/readme-images/game-area.png)
+
+<br>
+
+One a game is won or lost and the animation has finished, the HTML in the container is then replaced either with the 'Mission Accomplished' message or the 'Mission Aborted' message.  The difficulty buttons are displayed again, and the user is able to select which level they would like to play next.  Blast-off/Grounding scores are incremented accordingly to allow the user to keep track of how well (or how awfully) they are playing.
+
+<br>
+
+![Mission Accomplished](assets/readme-images/mission-accomplished.png)
+
+<br>
+
+![Mission Aborted](assets/readme-images/mission-aborted.png)
+
+<br>
+
+
+#### Features Left to Implement
 
 ## Technologies Used. 
 
