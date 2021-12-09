@@ -410,7 +410,7 @@ Live link found here:  [Blast-Off](https://shellied.github.io/Blast-Off/)
 
 <br>
 
-## Credits
+## Credits
 
 ### Reference Material
 
