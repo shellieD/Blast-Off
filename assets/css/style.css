@@ -15,7 +15,7 @@ html {
 
 body {
 	height: 100%;
-	background: #004CC6 url('../images/space-background.jpg') no-repeat center center/cover;
+	background: #004CC6 url('../images/background.png') no-repeat center center/cover;
 }
 
 .logo h1 {

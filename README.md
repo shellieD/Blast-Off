@@ -222,10 +222,37 @@ One a game is won or lost and the animation has finished, the HTML in the contai
 * W3C Validator Testing - HTML / CSS
 * Wave
 * [JSHint](https://jshint.com/) - I have loaded the JavaScript file into the linter and the following metrics and warnings were produced:-
+
  ![JSHint](assets/readme-images/jshint.png)
+
+ The warnings indicate that it could be better to declare variables within the functions themselves, however I think this could cause the code to become verbose and I have therefore chosen to use  descriptive names to declare the variables and have provided docstrings to provide clear context for the functions.  This should prevent any confusing semantics.
+
+ <br>
+
+ The undefined variables refer to variables that are defined in the separate data.js file.  These are the long list of space related words for each level of the game: levelOneWords, levelTwoWords and levelThreeWords.   I felt it better to keep these separate from the main code as there were so many of them and would provide better organisation. 
+
+ <br> 
+
+ Following testing in the linter, the unused variable 'wordArea' has now been removed from the script.js file. 
  
 
-* Lighthouse
+* Lighthouse - I used Lighthouse in Chrome Dev Tools to test the Performance, Accessibility, Best Practices and SEO scores of the site for both desktop and mobile.  The scores were perfect for desktop devices, and slightly under on performance at 94 for mobile.  
+
+<br> 
+
+![Lighthouse Score Desktop](assets/readme-images/lighthouse-desktop.png)
+
+<br>
+
+![Lighthouse Score Mobile](assets/readme-images/lighthouse-mobile.png)
+
+One of the reasons for the performance score being slightly lower for mobiles was the size of the files being transferred.  The background image I noticed was over 2MB so I decided to use [TinyPNG](https://tinypng.com/) to compress the image.  The image was reduced to 459KB and once replaced in the CSS file, the following Lighthouse scores were produced:-
+
+<br>
+
+
+
+
 
 I have regularly tested all aspects of the games functionality including all buttons, animations, sounds and responsiveness during the build process and have used Dev Tools in Chrome for responsivity across the following devices:-
 
