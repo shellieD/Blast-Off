@@ -420,6 +420,8 @@ Live link found here:  [Blast-Off](https://shellied.github.io/Blast-Off/)
 * [FreeFormatter.com](https://www.freeformatter.com/) - I used the HTML, CSS and JavaScript Beautifiers to format the code and remove any unnecessary white space.
 * [TinyPNG](https://tinypng.com/) - For compressing the size of the background image.
 * [CloudConvert](https://cloudconvert.com/) - To convert the background image from PNG to webp format.
+* [CodePen - Cathy Dutton](https://codepen.io/cathydutton/pen/ldazc) - I read through the code on this project a number of times to get an idea in my head of how to approach developing this game - although no code was copied from this source, it was helpful.
+* [Codepiep on YouTube](https://www.youtube.com/watch?v=UsSBmCmiKmI) - This was another video I watched a number of times to make sense of how a hangman game might function - although no code was copied from this video, I did find it useful.
 
 ### Media
 
