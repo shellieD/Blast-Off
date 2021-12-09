@@ -21,7 +21,7 @@ This project has been developed as part of the [Code Institute's](https://codein
 
 My idea for this game was to create an alternative version of the traditional pen-and-paper based game Hangman.  This game was to be based on space, and use space-themed vocabulary and include a fun animation of a rocket that would 'Blast-Off' if the user guessed the word correctly, or wobbled and toppled over if the user used all lives and did not guess the word correctly.  I wanted to create a site that could fit on one screen, despite the device used, be intuitive to use and have a fun, retro feel about it.  
 
-The target audience I would say, would be for children from age 6 upwards, however it is suitable for all, with families being able to sit together to play whilst testing their spelling and increasing their space-related vocabulary.  This game could also be used in schools for topic related work and provides an opportunity for learning i.e. spelling, researching the meaning of the words generated if unknown etc.
+The target audience is children from age 6 upwards, however it is suitable for all, with families being able to sit together to play whilst testing their spelling and increasing their space-related vocabulary.  This game could also be used in schools for topic related work and provides an opportunity for learning i.e. spelling, researching the meaning of the words generated if unknown etc.
 
 The game could be easily adapted to fit a range of themes by simply changing the random words to be guessed, the HTML content and the colors, images and vectograms used. 
 
@@ -79,6 +79,17 @@ Features that would be nice to have:
 ### The Structure Plane
 ----
 
+With the target audience being children from age 6 up, the structure needs to be kept simple and easy to use.   
+
+The idea is for the entire game to fit within the device viewport, so no scrolling is necessary.  
+
+Javascript will be used to manipulate the DOM and insert the relevant HTML into the main container div depending on what buttons are pressed. 
+
+The website will have a main landing page which when first loaded, will contain a welcome message, a brief outline of the rules of play and three buttons to select either Level One, Level Two or Level Three. 
+
+Once a level is selected the inner HTML of the container will be replaced with the game area content.  The user will be able to use the letter buttons to guess letter that may be in the word and once the game is won or lost, the inner HTML will again be replaced with a win or lose message.   This cycle will continue until the user decides to stop play.
+
+
 ### The Skeleton Plane
 ----
 
@@ -113,7 +124,7 @@ Desktop Wireframes
 ----
 #### Imagery
 
-Once satisfied with the layout and structure of the site, I got to work on sourcing a background image that would be striking, pleasing on the eye and would connect the user to the theme of the game. The below background image was found on freepik.com and was created by [Vectorpouch](https://www.freepik.com/vectorpouch).  As soon as I saw this background, I knew I had to use it as it was almost exactly what I was envisaging in my mind when thinking about the overall look and feel of the game.  
+Once satisfied with the layout and structure of the site, I got to work on sourcing a background image that would be striking, pleasing on the eye and would connect the user to the theme of the game. The below background image was found on freepik.com and was created by [Vectorpouch](https://www.freepik.com/vectorpouch).  As soon as I saw this background, I knew I had to use it as it was almost exactly what I was envisaged when thinking about the overall look and feel of the game.  
 
 ![Background Image](assets/docs/readme-images/background.png)
 
@@ -144,7 +155,9 @@ In the below screenshot, you can see how both fonts pair really nicely together.
 #### Existing Features
 The main heading and tag line ensure that the users who are already familiar with 'hangman' will know they have landed on a game page.  See above image under 'Typography'.
 
-Directly underneath the heading is a sound toggle button which will change to show the user whether the sound is on or off.  By default the sounds are set to mute to provide a good user experience (no one wants to be caught out whilst playing games at work!)
+Directly underneath the heading is a sound toggle button which will change to show the user whether the sound is on or off.  By default the sounds are set to mute to provide a good user experience (no one wants to be caught out whilst playing games at work!). 
+
+The heading, tagline and sound toggle button are always visible on the screen so the user knows which website they have visited and can toggle the sound at any given point in the game.
 
 <br>
 
@@ -200,7 +213,7 @@ Underneath the rules there are buttons to allow the user to select the difficult
 
 <br>
 
-One a game is won or lost and the animation has finished, the HTML in the container is then replaced either with the 'Mission Accomplished' message or the 'Mission Aborted' message.  The difficulty buttons are displayed again, and the user is able to select which level they would like to play next.  Blast-off/Grounding scores are incremented accordingly to allow the user to keep track of how well (or how awfully) they are playing.
+Once a game is won or lost and the animation has ended, the HTML in the container is then replaced either with the 'Mission Accomplished' message or the 'Mission Aborted' message.  The difficulty buttons are displayed again, and the user is able to select which level they would like to play next.  Blast-off/Grounding scores are incremented accordingly to allow the user to keep track of how well (or how awfully) they are playing.
 
 <br>
 
@@ -214,6 +227,14 @@ One a game is won or lost and the animation has finished, the HTML in the contai
 
 
 #### Features Left to Implement
+
+Overall I think the game functions really well, is simple to use and is enjoyable to play.  However, I would like to revisit this website in the future to implement the below features.
+
+1. Hint button - this would be added to the game area so that if the user is struggling to guess the word, they can click the hint button and the definition of the word would be shown.  
+
+2. Difficulty Levels - I would like to make levels two and three more difficult by decreases the amount of lives they get when they start the game.  For example 8 lives for a level two game, and five lives for a level three game. 
+
+3. It would be really nice to have a range of themes for this game, for example dinosaurs, volcanos, habitats, etc. and the main landing page would allow you to select which themed game you would like to play before asking you to select a level.
 
 ## Technologies Used. 
 
@@ -263,7 +284,7 @@ if (currentWord.includes(' ')) {
 To be sure this code would work for all words, I checked through the levelOneWords, levelTwoWords and levelThreeWords arrays to check that there were no words that contained more than one space or possibly a hyphen, which could cause further issues.  Thankfully there were none and this would be something something to consider if I wanted to update the words lists in the future.  A new 'if statement' may be required if hyphenated or triple word answers were inserted into the word arrays at a later date.
 
 
-* The main issue that raised it's ugly head during testing was that on some browsers, if you highlight the hidden word, you can actually see it *sad-coder-face*! My personal laptop is a Macbook Pro and I did not experience this issue when testing using the following browsers:-
+* The main issue that raised it's ugly head during testing was that on some browsers, if you highlight the hidden word, you can actually see it and therefore cheat your way to a win (although you'd only really be cheating yourself!). My personal laptop is a Macbook Pro and I did not experience this issue when testing using the following browsers:-
 
 - Chrome
 - Mozilla
@@ -282,13 +303,18 @@ However, when using the following browsers on a microsoft computer (tested by a 
 
 [Highlighted Word Screenshot - Bug](assets/docs/readme-images/bug.png)
 
-I deliberated over whether it should remain as a liveable bug as I didn't have a huge amount of time to look into ways to fix this.  I have instead applied a work-around which sets the font-size to the hidden-letters to 0px.  Whilst this may not be the best way around the issue, it did resolve it and now the word cannot be seen by inadvertently highlighting over it.
+I deliberated over whether it should remain as a liveable bug as I didn't have a huge amount of time to look into ways to fix this.  I have instead applied a work-around which sets the font-size to the hidden-letters to 0px.  Whilst this may not be the best way around the issue, it did resolve it and now the word cannot be seen by inadvertently highlighting over it in any browsers.
 
 #### Known Issues / Unresolved Bugs
 
-* One difficulty 
+* One difficulty I found was trying to make the game fully responsive on smaller screen-widths.  This was mainly due to some of the words being very long, or being long double words.  For example, 'centrifugal force' would push itself out of the container and off the screen due to the length of the word, meaning some letters could not be seen.   Unfortunately I was unaware of this until the end of the build and have not had sufficient time to fix this issue properly.  Adding an 'if statement' to the setRandomWord function to change the styling if the word is longer than 12 letters would be a good fix. However for the time being I have simply added a flex-flow: wrap; styling property to the wordArea for screen sizes 375px and smaller so any letters that would have been pushed off the screen now fall onto a line below.  All letters can now be seen, however a long single word would be split over two lines rather than one.  Whilst this is not a perfect fix, I think it is better to see the whole word, even is spread over two lines than for it to disappear off the edge of the screen.  The screenshot below demonstrates this issue:-
 
 <br>
+
+[Issue with Long Words](assets/docs/readme-images/felx.png)
+
+<br>
+
 
 #### Validator Tests
 
@@ -405,9 +431,7 @@ Live link found here:  [Blast-Off](https://shellied.github.io/Blast-Off/)
 
 ### Acknowledgments
 
-
-
-
-
-
-
+* A massive thank you to Dave Horrocks for his patience and insight and for spending hours listening to me trying to make sense of JavaScript, no matter what time it was!
+* Thank you also to Matt Bodden and John McPherson for their help with bugs and fixes.
+* The brilliant Slack community for their encouragement, motivation and assistance.
+* My mentor Brian O'Hare for his feedback and support.
