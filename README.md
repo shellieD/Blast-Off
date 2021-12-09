@@ -301,7 +301,7 @@ However, when using the following browsers on a microsoft computer (tested by a 
 - Mozilla
 - Edge
 
-[Highlighted Word Screenshot - Bug](assets/docs/readme-images/bug.png)
+![Highlighted Word Screenshot - Bug](assets/docs/readme-images/bug.png)
 
 I deliberated over whether it should remain as a liveable bug as I didn't have a huge amount of time to look into ways to fix this.  I have instead applied a work-around which sets the font-size to the hidden-letters to 0px.  Whilst this may not be the best way around the issue, it did resolve it and now the word cannot be seen by inadvertently highlighting over it in any browsers.
 
