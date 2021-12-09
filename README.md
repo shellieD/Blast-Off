@@ -246,7 +246,7 @@ One a game is won or lost and the animation has finished, the HTML in the contai
 
 ![Lighthouse Score Mobile](assets/readme-images/lighthouse-mobile.png)
 
-One of the reasons for the performance score being slightly lower for mobiles was the size of the files being transferred.  The background image I noticed was over 2MB so I decided to use [TinyPNG](https://tinypng.com/) to compress the image.  The image was reduced to 459KB and once replaced in the CSS file, the following Lighthouse scores were produced:-
+One of the reasons for the performance score being slightly lower for mobiles was the size of the files being transferred.  The background image I noticed was circa 2.7MB in size so I decided to use [TinyPNG](https://tinypng.com/) to compress the image and [CloudConvert](https://cloudconvert.com/) to convert the image from PNG to webp format.  The image was reduced to 196KB and once replaced in the CSS file, the following Lighthouse scores were produced:-
 
 <br>
 
