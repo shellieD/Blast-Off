@@ -113,9 +113,15 @@ Desktop Wireframes
 ----
 #### Imagery
 
-Once satisfied with the layout and structure of the site, I got to work on sourcing a background image that would be striking, pleasing on the eye and would connect the user to the theme of the game. The below background image was found on freepik.com and was created by [Vectorpouch](https://www.freepik.com/vectors/star).  As soon as I saw this background, I knew I had to use it as it was almost exactly what I was envisaging in my mind when thinking about the overall look and feel of the game.  
+Once satisfied with the layout and structure of the site, I got to work on sourcing a background image that would be striking, pleasing on the eye and would connect the user to the theme of the game. The below background image was found on freepik.com and was created by [Vectorpouch](https://www.freepik.com/vectorpouch).  As soon as I saw this background, I knew I had to use it as it was almost exactly what I was envisaging in my mind when thinking about the overall look and feel of the game.  
 
 ![Background Image](assets/docs/readme-images/background.png)
+
+After the background was sorted, I searched for a cartoon rocket vectogram that would compliment the background-image.  I wanted something relatively simple and sourced the below vectogram from [Dawny-Dawn from Pixabay](https://pixabay.com/users/dawnydawny-2157612/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2442125/)
+
+<br>
+
+![Rocket Vectogram](assets/docs/readme-images/rocket.png)
 
 #### Color Scheme
 
@@ -142,13 +148,13 @@ Directly underneath the heading is a sound toggle button which will change to sh
 
 <br>
 
-Sound Muted 
+Sound Muted: 
 
 <br>
 
 ![Sound off](assets/docs/readme-images/sound-off.png) 
 
-Sound Un-muted 
+Sound Un-muted: 
 
 <br>
 
@@ -215,10 +221,28 @@ One a game is won or lost and the animation has finished, the HTML in the contai
 * CSS
 * JavaScript
 
-* 
-### Gitpod Extensions???
-
 ## Testing
+
+Testing has taken place continuously throughout the development of the website.  Every small section of the Javascript was tested regularly using console.logs to ensure the expected outcome was achieved.  When the outcome produced was not as expected, debugging was undertaken at that point.  I have detailed below some of the bugs that have been resolved and some that remain (due to time constraints/knowledge gaps).
+
+### Bugs
+
+#### Resolved Bugs
+
+* The function to check whether the word has been guessed correctly works by comparing the number of letters in the random word generated (the word to be guessed) against the number of letters being pushed into a new array called chosenLetters.  The new array takes only letters that are included in the random word, so once both words have the same number of letters, the game is won.  However I noticed that after winning a game and starting a new game, the game could be won in only a few guesses, even if not all of the letters have been guessed.  At first I thought this could have been because incorrect letters were getting pushed to the chosenLetters array, but on further inspection, it was a much more simple fix and merely needed to redeclare the chosenLetters array as an empty array in the missionAccomplished and missionAborted functions so that the array was empty ready for the next game.
+
+* Another issue I came across during the build process was when a random word generated for guessing contained two words, for example Aurora Borealis.  The below code block would no longer work and the game could never be won:
+
+```
+if (currentWord.length === chosenLetters.length) {
+		incrementScore();
+		let letterButtons = document.getElementsByClassName('letter');
+		for (let letterButton of letterButtons) {
+			letterButton.style.visibility = 'hidden';
+		}
+```
+
+#### Current Bugs
 
 
 * W3C Validator Testing - HTML [View Report](https://validator.w3.org/nu/?doc=https%3A%2F%2Fshellied.github.io%2FBlast-Off%2F/) 
@@ -229,6 +253,8 @@ One a game is won or lost and the animation has finished, the HTML in the contai
 
 
 * Wave
+
+
 * [JSHint](https://jshint.com/) - I have loaded the JavaScript file into the linter and the following metrics and warnings were produced:-
 
  ![JSHint](assets/docs/readme-images/jshint.png)
@@ -294,20 +320,36 @@ I have also regularly tested the site using the following browsers:-
 * Firefox
 * Edge
 
-
-## Bugs
-### Current Bugs
-### Resolved Bugs
-
 ## Deployment
-* Github Pages
-* Forking
+
+ This site was deployed to GitHub pages.  The steps taken to deploy the site are as follows:
+
+ * In the GitHub repository, select the settings menu
+ * Choose the pages tab on the left hand side menu
+ * From the source section drop-down menu, select the 'Main' branch
+ * Once the page has automatically refreshed, the link to the successfully deployed page will be displayed.
+
+Live link found here:  [Blast-Off](https://shellied.github.io/Blast-Off/)
+
+<br>
 
 ## Credits
 
-* [FreeFormatter.com](https://www.freeformatter.com/) - I used the HTML, CSS and JavaScript Beautifiers to 
+### Reference Material
+
+* [W3 Schools](https://www.w3schools.com/) - A valuable resource for consolidating what I had already learned and finding out more about HTML,CSS & Javascript. 
+* [StackOverflow](https://stackoverflow.com/) - Generally a good resource for finding answers to problems I was having that other coders had similar experiences of.
+* [Google](http://google.com) - need I say more?!
+* [FreeFormatter.com](https://www.freeformatter.com/) - I used the HTML, CSS and JavaScript Beautifiers to format the code and remove any unnecessary white space.
+* [TinyPNG](https://tinypng.com/) - For compressing the size of the background image.
+* [CloudConvert](https://cloudconvert.com/) - To convert the background image from PNG to webp format.
 
 ### Media
+
+* [Favicon.io](https://favicon.io/favicon-generator/) - For generating the little rocket favicon.
+* [Vectorpouch](https://www.freepik.com/vectorpouch) - Thank you for the awesome background image!
+* [Dawny-Dawn from Pixabay](https://pixabay.com/users/dawnydawny-2157612/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2442125/) - Thanks for the rocket Vectogram.
+* [ZapSplat](https://www.zapsplat.com/) -  Thank you for all the sound effects.
 
 ### Acknowledgments
 
