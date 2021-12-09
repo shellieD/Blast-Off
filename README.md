@@ -229,21 +229,70 @@ Testing has taken place continuously throughout the development of the website. 
 
 #### Resolved Bugs
 
-* The function to check whether the word has been guessed correctly works by comparing the number of letters in the random word generated (the word to be guessed) against the number of letters being pushed into a new array called chosenLetters.  The new array takes only letters that are included in the random word, so once both words have the same number of letters, the game is won.  However I noticed that after winning a game and starting a new game, the game could be won in only a few guesses, even if not all of the letters have been guessed.  At first I thought this could have been because incorrect letters were getting pushed to the chosenLetters array, but on further inspection, it was a much more simple fix and merely needed to redeclare the chosenLetters array as an empty array in the missionAccomplished and missionAborted functions so that the array was empty ready for the next game.
+* The function to check whether the word has been guessed correctly works by comparing the number of letters in the random word generated (currentWord - the word to be guessed) against the number of letters being pushed into a new array called chosenLetters.  The new array takes only letters that are included in the currentWord so once both words have the same number of letters, the game is won.  However I noticed that after winning a game and starting a new game, the game could be won in only a few guesses, even if not all of the letters have been guessed.  At first I thought this could have been because incorrect letters were getting pushed to the chosenLetters array, but on further inspection, it was a much more simple fix and merely needed to redeclare the chosenLetters array as an empty array in the missionAccomplished and missionAborted functions so that the array was empty, ready for the next game.
 
-* Another issue I came across during the build process was when a random word generated for guessing contained two words, for example Aurora Borealis.  The below code block would no longer work and the game could never be won:
+* Another issue I came across during the build process was when a random word generated for guessing contained two words, for example Aurora Borealis.  The below code block would no longer work and the game could never be won:-
 
 ```
 if (currentWord.length === chosenLetters.length) {
+	incrementScore();
+	let letterButtons = document.getElementsByClassName('letter');
+	for (let letterButton of letterButtons) {
+		letterButton.style.visibility = 'hidden';
+	}
+    document.getElementById('rocket').classList.add('animation');
+	setTimeout(missionAccomplished, 3500);
+}
+```
+
+There were two ways around this.  I could either remove all of the double-word answers from the array(!) OR, I could go about solving the problem.  I opted for the latter and it proved to again be an easy fix whereby I needed to check if the currentWord included a space and if so, compare the length of the currentWord -1 to the length of chosenLetters array.  If this was the case, then the below code block would run instead:-
+
+```
+if (currentWord.includes(' ')) {
+	if (currentWord.length - 1 === chosenLetters.length) {
 		incrementScore();
 		let letterButtons = document.getElementsByClassName('letter');
 		for (let letterButton of letterButtons) {
 			letterButton.style.visibility = 'hidden';
 		}
+		document.getElementById('rocket').classList.add('animation');
+		setTimeout(missionAccomplished, 3500);
+    }
+}
 ```
+To be sure this code would work for all words, I checked through the levelOneWords, levelTwoWords and levelThreeWords arrays to check that there were no words that contained more than one space or possibly a hyphen, which could cause further issues.  Thankfully there were none and this would be something something to consider if I wanted to update the words lists in the future.  A new 'if statement' may be required if hyphenated or triple word answers were inserted into the word arrays at a later date.
 
-#### Current Bugs
 
+* The main issue that raised it's ugly head during testing was that on some browsers, if you highlight the hidden word, you can actually see it *sad-coder-face*! My personal laptop is a Macbook Pro and I did not experience this issue when testing using the following browsers:-
+
+- Chrome
+- Mozilla
+- Edge
+- Safari
+
+And as you can see from the below screen snippet, the word is hidden even when highlighted.
+
+![Highlighted Word Screenshot](assets/docs/readme-images/notbug.png)
+
+However, when using the following browsers on a microsoft computer (tested by a friend), the issue is very real:-
+
+- Chrome
+- Mozilla
+- Edge
+
+[Highlighted Word Screenshot - Bug](assets/docs/readme-images/bug.png)
+
+I deliberated over whether it should remain as a liveable bug as I didn't have a huge amount of time to look into ways to fix this.  I have instead applied a work-around which sets the font-size to the hidden-letters to 0px.  Whilst this may not be the best way around the issue, it did resolve it and now the word cannot be seen by inadvertently highlighting over it.
+
+#### Known Issues / Unresolved Bugs
+
+* One difficulty 
+
+<br>
+
+#### Validator Tests
+
+I have loaded the website into the W3C Validators for HTML and CSS and no errors were found.    
 
 * W3C Validator Testing - HTML [View Report](https://validator.w3.org/nu/?doc=https%3A%2F%2Fshellied.github.io%2FBlast-Off%2F/) 
 
@@ -251,8 +300,11 @@ if (currentWord.length === chosenLetters.length) {
 
 * W3C Validator Testing - CSS [View Report](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fshellied.github.io%2FBlast-Off%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en/)
 
+<br>
 
-* Wave
+I also loaded the website into Wave to produce an accessibility report.  No errors were found.  There were some warnings the regarding the audio, however as the audio that is preloaded in the HTML is only sound effects, no transcription is required, so these warnings require no action.
+
+* Wave Accessibility Report - [View Report](https://wave.webaim.org/report#/https://shellied.github.io/Blast-Off/)
 
 
 * [JSHint](https://jshint.com/) - I have loaded the JavaScript file into the linter and the following metrics and warnings were produced:-
@@ -269,6 +321,7 @@ if (currentWord.length === chosenLetters.length) {
 
  Following testing in the linter, the unused variable 'wordArea' has now been removed from the script.js file. 
  
+ <br>
 
 * Lighthouse - I used Lighthouse in Chrome Dev Tools to test the Performance, Accessibility, Best Practices and SEO scores of the site for both desktop and mobile.  The scores were perfect for desktop devices, and slightly under on performance at 94 for mobile.  
 
@@ -287,7 +340,6 @@ One of the reasons for the performance score being slightly lower for mobiles wa
 ![Lighthouse Improved Score](assets/docs/readme-images/lighthouse-after.png)
 
 <br>
-
 
 I have regularly tested all aspects of the games functionality including all buttons, animations, sounds and responsiveness during the build process and have used Dev Tools in Chrome for responsivity across the following devices:-
 
