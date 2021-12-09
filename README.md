@@ -220,11 +220,12 @@ One a game is won or lost and the animation has finished, the HTML in the contai
 
 ## Testing
 
-* W3C Validator Testing - HTML ![View Report](https://validator.w3.org/nu/?doc=https%3A%2F%2Fshellied.github.io%2FBlast-Off%2F) 
+
+* W3C Validator Testing - HTML [View Report](https://validator.w3.org/nu/?doc=https%3A%2F%2Fshellied.github.io%2FBlast-Off%2F/) 
 
 <br>
 
-* W3C Validator Testing - CSS ![View Report](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fshellied.github.io%2FBlast-Off%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* W3C Validator Testing - CSS [View Report](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fshellied.github.io%2FBlast-Off%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en/)
 
 
 * Wave
