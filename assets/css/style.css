@@ -337,6 +337,7 @@ p>span {
 	#word-area {
 		font-size: 15px;
 		margin: 30px;
+		flex-flow: wrap;
 	}
 	p>span {
 		margin: 0px 2px;
