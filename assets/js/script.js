@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	addSoundButtonListeners();
 });
 
-var wordArea = document.getElementById('word-area');
-
 /**
  * Changes inner HTML to display game screen when called.
  */
