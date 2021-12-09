@@ -106,6 +106,7 @@ body {
 
 .hidden-letter {
 	color: transparent;
+	font-size: 0px;
 }
 
 p>span {
