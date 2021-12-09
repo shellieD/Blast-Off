@@ -4,7 +4,7 @@ This interactive front-end website has been developed to entertain space-enthusi
 
 Blast-off is a modern twist on the good old fashioned, pen and paper based game Hangman.  Instead of slowly bringing an innocent stick-man to his untimely death by hanging, the user is challenged to guess a space-related word, letter-by-letter.  If the word is guessed correctly the rocket will blast-off into space, but if they get the answer wrong or run out of lives, the rocket will remain grounded.
 
-![Am I Responsive Screenshots](assets/readme-images/am-i-responsive.png)
+![Am I Responsive Screenshots](assets/docs/readme-images/am-i-responsive.png)
 
 Link to deployed site:
 <br>
@@ -92,7 +92,7 @@ Mobile Wireframes
 <summary>Mobile Wireframes</summary>
 <br>
 
-![Wireframes](assets/wireframes/mobile-wireframes.png)
+![Wireframes](assets/docs/wireframes/mobile-wireframes.png)
 </details>
 
 <br>
@@ -103,8 +103,8 @@ Mobile Wireframes
 Desktop Wireframes
 <br>
 
-![Wireframes](assets/wireframes/desktop-wireframes1.png)
-![Wireframes](assets/wireframes/desktop-wireframes2.png)
+![Wireframes](assets/docs/wireframes/desktop-wireframes1.png)
+![Wireframes](assets/docs/wireframes/desktop-wireframes2.png)
 </details>
 
 <br>
@@ -115,7 +115,7 @@ Desktop Wireframes
 
 Once satisfied with the layout and structure of the site, I got to work on sourcing a background image that would be striking, pleasing on the eye and would connect the user to the theme of the game. The below background image was found on freepik.com and was created by [Vectorpouch](https://www.freepik.com/vectors/star).  As soon as I saw this background, I knew I had to use it as it was almost exactly what I was envisaging in my mind when thinking about the overall look and feel of the game.  
 
-![Background Image](assets/readme-images/background.png)
+![Background Image](assets/docs/readme-images/background.png)
 
 #### Color Scheme
 
@@ -123,7 +123,7 @@ I wanted to keep the color scheme simple and so opted for plain white text to se
 
 I used [EightShapes Contrast Grid](https://contrast-grid.eightshapes.com) to ensure that all text and background combinations used met the required contrast ratios in compliance with [WCAG 2.0 minimum contrast](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
 
-![Contrast Grid](assets/readme-images/contrast-grid.png)
+![Contrast Grid](assets/docs/readme-images/contrast-grid.png)
 
 #### Typography
 
@@ -131,7 +131,7 @@ I wanted to give the game a science-fiction feel and what better to do that with
 
 In the below screenshot, you can see how both fonts pair really nicely together.
 
-![Typography](assets/readme-images/header.png)
+![Typography](assets/docs/readme-images/header.png)
 
 ### Features
 
@@ -146,13 +146,13 @@ Sound Muted
 
 <br>
 
-![Sound off](assets/readme-images/sound-off.png) 
+![Sound off](assets/docs/readme-images/sound-off.png) 
 
 Sound Un-muted 
 
 <br>
 
-![Sound on](assets/readme-images/sound-on.png)
+![Sound on](assets/docs/readme-images/sound-on.png)
 
 <br>
 
@@ -160,13 +160,13 @@ For users who are unfamiliar with hangman, there is a brief outline of the rules
 
 <br>
 
-![Rules of Play](assets/readme-images/rules.png)
+![Rules of Play](assets/docs/readme-images/rules.png)
 
 Underneath the rules there are buttons to allow the user to select the difficulty of the level at the start of the game.  These same buttons are also present on the 'Mission Accomplished' screen when a user has won a game, and the 'Mission Aborted' screen when a user has lost a game.  This provides really nice consistency across all parts of the game.  The user does not have to go searching for ways to change the levels at any point as they are displayed on all screens with the exception of the game screen.
 
 <br>
  
- ![Difficulty Buttons](assets/readme-images/level-buttons.png)
+ ![Difficulty Buttons](assets/docs/readme-images/level-buttons.png)
 
  <br>
 
@@ -190,7 +190,7 @@ Underneath the rules there are buttons to allow the user to select the difficult
 
  <br>
 
- ![Game Screen](assets/readme-images/game-area.png)
+ ![Game Screen](assets/docs/readme-images/game-area.png)
 
 <br>
 
@@ -198,11 +198,11 @@ One a game is won or lost and the animation has finished, the HTML in the contai
 
 <br>
 
-![Mission Accomplished](assets/readme-images/mission-accomplished.png)
+![Mission Accomplished](assets/docs/readme-images/mission-accomplished.png)
 
 <br>
 
-![Mission Aborted](assets/readme-images/mission-aborted.png)
+![Mission Aborted](assets/docs/readme-images/mission-aborted.png)
 
 <br>
 
@@ -219,11 +219,14 @@ One a game is won or lost and the animation has finished, the HTML in the contai
 ### Gitpod Extensions???
 
 ## Testing
-* W3C Validator Testing - HTML / CSS
+* [W3C Validator Testing - HTML]
+* W3C Validator Testing - CSS
+
+
 * Wave
 * [JSHint](https://jshint.com/) - I have loaded the JavaScript file into the linter and the following metrics and warnings were produced:-
 
- ![JSHint](assets/readme-images/jshint.png)
+ ![JSHint](assets/docs/readme-images/jshint.png)
 
  The warnings indicate that it could be better to declare variables within the functions themselves, however I think this could cause the code to become verbose and I have therefore chosen to use  descriptive names to declare the variables and have provided docstrings to provide clear context for the functions.  This should prevent any confusing semantics.
 
@@ -240,18 +243,19 @@ One a game is won or lost and the animation has finished, the HTML in the contai
 
 <br> 
 
-![Lighthouse Score Desktop](assets/readme-images/lighthouse-desktop.png)
+![Lighthouse Score Desktop](assets/docs/readme-images/lighthouse-desktop.png)
 
 <br>
 
-![Lighthouse Score Mobile](assets/readme-images/lighthouse-mobile.png)
+![Lighthouse Score Mobile](assets/docs/readme-images/lighthouse-mobile.png)
 
-One of the reasons for the performance score being slightly lower for mobiles was the size of the files being transferred.  The background image I noticed was circa 2.7MB in size so I decided to use [TinyPNG](https://tinypng.com/) to compress the image and [CloudConvert](https://cloudconvert.com/) to convert the image from PNG to webp format.  The image was reduced to 196KB and once replaced in the CSS file, the following Lighthouse scores were produced:-
+One of the reasons for the performance score being slightly lower for mobiles was the size of the files being transferred.  The background image I noticed was circa 2.7MB in size so I decided to use [TinyPNG](https://tinypng.com/) to compress the image and [CloudConvert](https://cloudconvert.com/) to convert the image from PNG to webp format.  The image was reduced to 196KB and once replaced in the CSS file, the following Lighthouse scores were produced showing a marginal improvement:-
 
 <br>
 
+![Lighthouse Improved Score](assets/docs/readme-images/lighthouse-after.png)
 
-
+<br>
 
 
 I have regularly tested all aspects of the games functionality including all buttons, animations, sounds and responsiveness during the build process and have used Dev Tools in Chrome for responsivity across the following devices:-
