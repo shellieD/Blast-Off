@@ -19,7 +19,7 @@ Link to deployed site:
 
 This project has been developed as part of the [Code Institute's](https://codeinstitute.net/) Diploma in Full-Stack Software Development.  The aim is to create a game that will demonstrate the skills I have learnt in HTML, CSS and Javascript
 
-My idea for this game was to create an alternative version of the traditional pen-and-paper based game Hangman.  This game was to be based on space, and use space-themed vocabulary and include a fun animation of a rocket that would 'Blast-Off' if the user guessed the word correctly, or wobbled and toppled over if the user used all lives and did not guess the word correctly.  I wanted to create a site that could fit on one screen, despite the device used, be intuitive to use and have a fun, retro feel about it.  
+My idea for this game was to create an alternative version of the traditional pen-and-paper based game Hangman.  This game was to be based on space, and use space-themed vocabulary and include a fun animation of a rocket that would 'Blast-Off' if the user guessed the word correctly, or wobble and topple over if the user used all lives and did not guess the word correctly.  I wanted to create a site that could fit on one screen, despite the device used, be intuitive to use and have a fun, retro feel about it.  
 
 The target audience is children from age 6 upwards, however it is suitable for all, with families being able to sit together to play whilst testing their spelling and increasing their space-related vocabulary.  This game could also be used in schools for topic related work and provides an opportunity for learning i.e. spelling, researching the meaning of the words generated if unknown etc.
 
@@ -83,7 +83,7 @@ With the target audience being children from age 6 up, the structure needs to be
 
 The idea is for the entire game to fit within the device viewport, so no scrolling is necessary.  
 
-Javascript will be used to manipulate the DOM and insert the relevant HTML into the main container div depending on what buttons are pressed. 
+Javascript will be used to manipulate the DOM and insert the relevant HTML into the main container div depending on what buttons are pressed.  This will mean that navigation buttons are unnecessary and all the information the user needs is presented to them rather than them having to look for it.
 
 The website will have a main landing page which when first loaded, will contain a welcome message, a brief outline of the rules of play and three buttons to select either Level One, Level Two or Level Three. 
 
@@ -95,9 +95,7 @@ Once a level is selected the inner HTML of the container will be replaced with t
 
 #### Wireframes
 
-The below mockups were made using Balsamiq.  The design is simple but effective.  
-
-Mobile Wireframes
+The below mockups were made using [Balsamiq](https://balsamiq.com/).  The design is simple but effective.  
 
 <details>
 <summary>Mobile Wireframes</summary>
@@ -118,7 +116,7 @@ Desktop Wireframes
 ![Wireframes](assets/docs/wireframes/desktop-wireframes2.png)
 </details>
 
-<br>
+
 
 ### The Surface Plane
 ----
@@ -136,7 +134,7 @@ After the background was sorted, I searched for a cartoon rocket vectogram that 
 
 #### Color Scheme
 
-I wanted to keep the color scheme simple and so opted for plain white text to set a high colour contrast for accessability best practice and used [imagecolorpicker.com](https://imagecolorpicker.com/) to pull colours from the background image.  I chose a deep blue background colour to use for the main container div on the page, a shade of deep purple for all buttons and a lighter purple to create differentiation when buttons are hovered over.
+I wanted to keep the color scheme simple and so opted for plain white text to set a high colour contrast for accessability best practice and used [imagecolorpicker.com](https://imagecolorpicker.com/) to pull colours from the background image.  I chose a deep blue background colour to use for the main container div on the page and set the opacity so that you could still see the image through it but did not affect the readability of the text.  I then chose a shade of deep purple for all buttons and a lighter purple to create differentiation when buttons are hovered over.
 
 I used [EightShapes Contrast Grid](https://contrast-grid.eightshapes.com) to ensure that all text and background combinations used met the required contrast ratios in compliance with [WCAG 2.0 minimum contrast](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
 
@@ -236,11 +234,6 @@ Overall I think the game functions really well, is simple to use and is enjoyabl
 
 3. It would be really nice to have a range of themes for this game, for example dinosaurs, volcanos, habitats, etc. and the main landing page would allow you to select which themed game you would like to play before asking you to select a level.
 
-## Technologies Used. 
-
-* HTML
-* CSS
-* JavaScript
 
 ## Testing
 
@@ -250,7 +243,7 @@ Testing has taken place continuously throughout the development of the website. 
 
 #### Resolved Bugs
 
-* The function to check whether the word has been guessed correctly works by comparing the number of letters in the random word generated (currentWord - the word to be guessed) against the number of letters being pushed into a new array called chosenLetters.  The new array takes only letters that are included in the currentWord so once both words have the same number of letters, the game is won.  However I noticed that after winning a game and starting a new game, the game could be won in only a few guesses, even if not all of the letters have been guessed.  At first I thought this could have been because incorrect letters were getting pushed to the chosenLetters array, but on further inspection, it was a much more simple fix and merely needed to redeclare the chosenLetters array as an empty array in the missionAccomplished and missionAborted functions so that the array was empty, ready for the next game.
+* The function to check whether the word has been guessed correctly works by comparing the number of letters in the random word generated (currentWord - the word to be guessed) against the number of letters being pushed into a new array called chosenLetters.  The new array takes only letters that are included in the currentWord so once both words have the same number of letters, the game is won.  However I noticed that after winning a game and starting a new game, the game could be won in only a few guesses, even if not all of the letters have been guessed.  At first I thought this could have been because incorrect letters were getting pushed to the chosenLetters array, but on further inspection, it was a much more simple fix and merely needed to redeclare the chosenLetters array as an empty array in the missionAccomplished and missionAborted functions so that the array was emptied of all previously guessed letters, ready for the next game.
 
 * Another issue I came across during the build process was when a random word generated for guessing contained two words, for example Aurora Borealis.  The below code block would no longer work and the game could never be won:-
 
@@ -281,7 +274,7 @@ if (currentWord.includes(' ')) {
     }
 }
 ```
-To be sure this code would work for all words, I checked through the levelOneWords, levelTwoWords and levelThreeWords arrays to check that there were no words that contained more than one space or possibly a hyphen, which could cause further issues.  Thankfully there were none and this would be something something to consider if I wanted to update the words lists in the future.  A new 'if statement' may be required if hyphenated or triple word answers were inserted into the word arrays at a later date.
+To be sure this code would work for all words, I checked through the levelOneWords, levelTwoWords and levelThreeWords arrays to make sure there were no words that contained more than one space or possibly a hyphen, which could cause further issues.  Thankfully there were none and this would be something something to consider if I wanted to update the word lists in the future.  A new 'if statement' may be required if hyphenated or triple word answers were inserted into the word arrays at a later date.
 
 
 * The main issue that raised it's ugly head during testing was that on some browsers, if you highlight the hidden word, you can actually see it and therefore cheat your way to a win (although you'd only really be cheating yourself!). My personal laptop is a Macbook Pro and I did not experience this issue when testing using the following browsers:-
@@ -303,11 +296,11 @@ However, when using the following browsers on a microsoft computer (tested by a 
 
 ![Highlighted Word Screenshot - Bug](assets/docs/readme-images/bug.png)
 
-I deliberated over whether it should remain as a liveable bug as I didn't have a huge amount of time to look into ways to fix this.  I have instead applied a work-around which sets the font-size to the hidden-letters to 0px.  Whilst this may not be the best way around the issue, it did resolve it and now the word cannot be seen by inadvertently highlighting over it in any browsers.
+I deliberated over whether it should remain as a liveable bug as I didn't have a huge amount of time to look into ways to fix this.  I have instead applied a work-around which sets the font-size of the hidden-letters to 0px.  Whilst this may not be the best way around the issue, it has resolve it and now the word cannot be seen by inadvertently highlighting over it in any browsers.
 
 #### Known Issues / Unresolved Bugs
 
-* One difficulty I found was trying to make the game fully responsive on smaller screen-widths.  This was mainly due to some of the words being very long, or being long double words.  For example, 'centrifugal force' would push itself out of the container and off the screen due to the length of the word, meaning some letters could not be seen.   Unfortunately I was unaware of this until the end of the build and have not had sufficient time to fix this issue properly.  Adding an 'if statement' to the setRandomWord function to change the styling if the word is longer than 12 letters would be a good fix. However for the time being I have simply added a flex-flow: wrap; styling property to the wordArea for screen sizes 375px and smaller so any letters that would have been pushed off the screen now fall onto a line below.  All letters can now be seen, however a long single word would be split over two lines rather than one.  Whilst this is not a perfect fix, I think it is better to see the whole word, even is spread over two lines than for it to disappear off the edge of the screen.  The screenshot below demonstrates this issue:-
+* One difficulty I found was trying to make the game fully responsive on smaller screen-widths.  This was mainly due to some of the words being very long, or being long double words.  For example, 'centrifugal force' would push itself out of the container and off the screen due to the length of the word, meaning some letters could not be seen.   Unfortunately I was unaware of this until the end of the build and have not had sufficient time to fix this issue properly.  Adding an 'if statement' to the setRandomWord function to change the styling if the word is longer than 12 letters would be a good fix. However for the time being I have simply added a flex-flow: wrap; styling property to the wordArea for screen sizes 375px and smaller so any letters that would have been pushed off the screen now fall onto a line below.  All letters can now be seen, however a long single word would be split over two lines rather than one.  Whilst this is not a perfect fix, I think it is better to see the whole word, even if spread over two lines than for it to disappear off the edge of the screen.  The screenshot below demonstrates this issue:-
 
 <br>
 
@@ -327,7 +320,7 @@ I have loaded the website into the W3C Validators for HTML and CSS and no errors
 
 <br>
 
-I also loaded the website into Wave to produce an accessibility report.  No errors were found.  There were some warnings the regarding the audio, however as the audio that is preloaded in the HTML is only sound effects, no transcription is required, so these warnings require no action.
+I also loaded the website into Wave to produce an accessibility report.  No errors were found.  There were some warnings regarding the audio, however as the audio that is preloaded in the HTML is only sound effects, no transcription is required, so these warnings require no action.
 
 * Wave Accessibility Report - [View Report](https://wave.webaim.org/report#/https://shellied.github.io/Blast-Off/)
 
@@ -409,6 +402,16 @@ I have also regularly tested the site using the following browsers:-
 Live link found here:  [Blast-Off](https://shellied.github.io/Blast-Off/)
 
 <br>
+
+## Technologies Used. 
+
+* HTML
+* CSS
+* JavaScript
+* Github
+* Gitpod
+* Gitpages
+* Dev tools
 
 ## Credits
 
